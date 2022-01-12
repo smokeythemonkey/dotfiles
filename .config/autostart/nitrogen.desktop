@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=nitrogen --restore
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=nitrogen wallpaper
+Name=nitrogen wallpaper
+Comment[en_US]=Starts Nitrogen Wallpaper app
+Comment=Starts Nitrogen Wallpaper app

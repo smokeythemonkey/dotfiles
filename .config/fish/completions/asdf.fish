@@ -1,0 +1,1 @@
+/home/awollgarten/.asdf/completions/asdf.fish
