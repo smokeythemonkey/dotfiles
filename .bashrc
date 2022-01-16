@@ -118,3 +118,10 @@ fi
 
 
 TERM=xterm
+
+# asdf config
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+# starshipt prompt
+eval "$(starship init bash)"
