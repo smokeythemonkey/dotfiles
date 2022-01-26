@@ -2,7 +2,13 @@ from libqtile.lazy import lazy
 from libqtile.config import Key
 
 mod = "mod4"
-terminal = "xfce4-terminal"
+terminal = "kitty"
+web_browser = "firefox"
+email_client = "thunderbird"
+file_browser = "thunar"
+editor = "code"
+
+
 
 keys = [
     # Switch between windows
@@ -11,12 +17,14 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod],
-        "space",
+        "Tab",
         lazy.layout.next(),
         desc="Move window focus to other window"),
 
+    Key([mod], "space", lazy.spawn("rofi -show drun"), desc="spawn rofi"),
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
-
+    
+    
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"],
@@ -61,8 +69,8 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift", "control"], "h", lazy.layout.swap_column_left()),
     Key([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
     Key([mod, "shift"], "space", lazy.layout.flip()),
@@ -75,4 +83,32 @@ keys = [
     Key([], "XF86AudioRaiseVolume",lazy.spawn("amixer set Master 3%+")),
     Key([], "XF86AudioLowerVolume",lazy.spawn("amixer set Master 3%-")),
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
+
+    # Launch apps
+    Key([mod], "w", lazy.spawn(web_browser), desc="Launch Firefox"),
+    Key([mod], "e", lazy.spawn(email_client), desc="Launch Thunderbird"),
+    Key([mod, "shift"], "n", lazy.spawn(file_browser), desc="Launch Thunar"),
+    Key([mod], "o", lazy.spawn(editor), desc="Launch VS Code"),
+    Key([mod], "s", lazy.spawn("pavucontrol"), desc="Launch Audio settings"),
+
+
+    # Shot Screen
+    Key(
+        [mod, "shift"],
+        "s",
+        lazy.spawn("flameshot gui"),
+        desc="Launches flameshot",
+    ),
+    Key(
+        [],
+        "Print",
+        lazy.spawn("flameshot screen -n 0 -c"),
+        desc="Shot display 0",
+    ),
+    Key(
+        [mod],
+        "Print",
+        lazy.spawn("flameshot screen -n 1 -c"),
+        desc="Shot display 1",
+    ),
 ]

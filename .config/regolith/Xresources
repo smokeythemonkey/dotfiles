@@ -1,4 +1,4 @@
-i3-wm.bar.position:	top
-i3-wm.bar.font:		pango:Fira Mono Regular 15, FontAwesome 11
-i3-wm.program.files:	/usr/bin/nemo
-i3-wm.program.shutdown:	systemctl shutdown
+//i3-wm.bar.position:	top
+//i3-wm.bar.font:		pango:Fira Mono Regular 15, FontAwesome 11
+//i3-wm.program.files:	/usr/bin/nemo
+//i3-wm.program.shutdown:	systemctl shutdown
