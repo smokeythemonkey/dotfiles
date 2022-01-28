@@ -125,3 +125,5 @@ TERM=xterm
 
 # starshipt prompt
 eval "$(starship init bash)"
+#eval "$(asdf exec direnv hook bash)"
+#eval "$(pipenv --completion)"
