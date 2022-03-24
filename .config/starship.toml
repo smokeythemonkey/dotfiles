@@ -51,22 +51,8 @@ trim_at = "-"
 style = "bold dimmed white"
 disabled = true
 
-[julia]
-format = "[$symbol$version]($style) "
-symbol = "ஃ "
-style = "bold green"
-
-[memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 70
-style = "bold dimmed white"
-disabled = false
-
-[package]
-disabled = true
-
 [python]
-format = "[$symbol$version]($style) "
+format = "[$symbol $version $virtualenv]($style) "
 style = "bold green"
 
 [rust]

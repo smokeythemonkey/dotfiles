@@ -15,10 +15,10 @@ direnv hook fish | source
 # Created by `pipx` on 2022-01-16 14:58:58
 set PATH $PATH /home/awollgarten/.local/bin
 
-# Aliases
-alias rmi="rm -i"
-alias aptud="sudo apt update"
-alias aptug="sudo apt upgrade -y"
-alias apti="sudo apt -y install "
-alias aptr="sudo apt -y remove "
-alias ls="ls -lah --color"
+# Abbreviations
+abbr -a rmi rm -i
+abbr -a aptud sudo apt update && apt list --upgradeable
+abbr -a aptug sudo apt upgrade -y
+abbr -a aptin sudo apt -y install 
+abbr -a aptrm sudo apt -y remove 
+abbr -a ls ls -lah --color
