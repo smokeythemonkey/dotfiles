@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+
+install_apt_packages(){
+    sudo apt install fish -y
+    sudo apt install fzf -y
+    sudo apt install thunderbird -y
+    sudo apt install nextcloud-desktop -y
+    sudo apt install flameshot -y
+    sudo apt install kitty -y
+    sudo apt install code -y
+    sudo apt install timeshift -y
+    sudo apt install python-is-python3 -y
+}
+
+# install_pacstall(){
+#     sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
+# }
+
+# install_pacstall_packages(){
+#     pacstall -I discord
+#     pacstall -I btop-bin
+#     pacstall -I vercrypt-deb
+#     pacstall -I librewolf
+# }
+
+install_starship(){
+    curl -sS https://starship.rs/install.sh | sh
+}
+
+install_enpass(){
+    sudo -i 
+    echo "deb https://apt.enpass.io/ stable main" > /etc/apt/sources.list.d/enpass.list
+    wget -O - https://apt.enpass.io/keys/enpass-linux.key | tee /etc/apt/trusted.gpg.d/enpass.asc
+    exit
+    sudo apt install update
+    sudo apt install enpass -y
+}
+
+install_asdf(){
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
+    sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev --yes
+    asdf plugin add python
+    asdf install python latest
+    asdf global python latest
+}
+
+install_python_tools(){
+    python -m install --user pipx
+    pipx ensurepath
+    pipx install pdm
+    pipx install pre-commit
+    pipx install black
+}
+cleanup() {
+    sudo apt-get autoremove -y
+}
+
+main(){
+    process_flags "$@"
+	while [[ $1 = -* ]]; do shift; done
+
+	if ((${#@} == 0)); then
+		install_apt_packages
+        install_starship
+        install_enpass
+        install_asdf
+        install_python_tools
+		cleanup
+	else
+		for cmd in "$@"; do
+			"$cmd"
+		done
+	fi
+}
+
+main "$@"

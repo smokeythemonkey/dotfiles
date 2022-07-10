@@ -8,8 +8,8 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/awollgarten/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/awollgarten/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/awollgarten\x24
-SETUVAR --export __ABBR_TIPS_KEYS:a__apti\x1ea__aptr\x1ea__aptud\x1ea__aptug\x1ea__ls\x1ea__rmi\x1ea__\x1ea__
-SETUVAR --export __ABBR_TIPS_VALUES:\x27\x1e\x27sudo\x20apt\x20\x2dy\x20install\x20\x27\x1e\x27\x1e\x27sudo\x20apt\x20\x2dy\x20remove\x20\x27\x1e\x27\x1e\x27sudo\x20apt\x20update\x20\x26\x26\x20apt\x20list\x20\x2d\x2dupgradeable\x27\x1e\x27\x1e\x27sudo\x20apt\x20upgrade\x20\x2dy\x27\x1e\x27\x1e\x27ls\x20\x2dlah\x20\x2d\x2dcolor\x27\x1e\x27\x1e\x27rm\x20\x2di\x27
+SETUVAR --export __ABBR_TIPS_KEYS:a__apti\x1ea__aptr\x1ea__aptud\x1ea__aptug\x1ea__ls\x1ea__rmi\x1ea__\x1ea__\x1ea__\x1ea__\x1ea__\x2de\x1ea__\x2dh\x1ea__
+SETUVAR --export __ABBR_TIPS_VALUES:\x27\x1e\x27sudo\x20apt\x20\x2dy\x20install\x20\x27\x1e\x27\x1e\x27sudo\x20apt\x20\x2dy\x20remove\x20\x27\x1e\x27\x1e\x27sudo\x20apt\x20update\x20\x26\x26\x20apt\x20list\x20\x2d\x2dupgradeable\x27\x1e\x27\x1e\x27sudo\x20apt\x20upgrade\x20\x2dy\x27\x1e\x27\x1e\x27ls\x20\x2dlah\x20\x2d\x2dcolor\x27\x1e\x27\x1e\x27rm\x20\x2di\x27\x1esshhosts
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_aptin:sudo\x20apt\x20\x2dy\x20install
 SETUVAR _fish_abbr_aptls:apt\x20list\x20\x2d\x2dupgradable
@@ -23,7 +23,6 @@ SETUVAR _fish_abbr_ls:ls\x20\x2dlah\x20\x2d\x2dcolor
 SETUVAR _fish_abbr_pypi:sudo\x20docker\x20run\x20\x2dp\x208000\x3a8080\x20pypi\x2dserver
 SETUVAR _fish_abbr_rmf:rm\x20\x2drf
 SETUVAR _fish_abbr_rmi:rm\x20\x2di
-SETUVAR _fish_abbr_sshls:cat\x20\x2essh/config
 SETUVAR _fisher_gazorby_2F_fish_2D_abbreviation_2D_tips_files:\x7e/\x2econfig/fish/functions/__abbr_tips_bind_newline\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_bind_space\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_init\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/abbr_tips\x2efish
 SETUVAR _fisher_jethrokuan_2F_z_files:\x7e/\x2econfig/fish/functions/__z\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_complete\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
