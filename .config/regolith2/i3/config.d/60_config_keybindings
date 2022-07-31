@@ -24,5 +24,5 @@ bindsym $mod+$i3-wm.binding.bluetooth exec --no-startup-id $i3-wm.program.blueto
 
 ## Launch // File Browser // <><Shift> n ##
 set_from_resource $i3-wm.binding.files i3-wm.binding.files Shift+n
-set_from_resource $i3-wm.program.files i3-wm.program.files /usr/bin/nautilus --new-window
+set_from_resource $i3-wm.program.files i3-wm.program.files /usr/bin/nemo
 bindsym $mod+$i3-wm.binding.files exec --no-startup-id $i3-wm.program.files
