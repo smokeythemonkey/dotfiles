@@ -26,14 +26,27 @@ abbr ls ls -lah --color
 abbr df df -H
 
 # Apt
-abbr aptud sudo apt update
-abbr aptug sudo apt upgrade -y
-abbr aptin sudo apt -y install 
-abbr aptrm sudo apt -y remove 
-abbr aptls apt list --upgradable
-abbr aptpg sudo apt purge
-abbr aptar sudo apt autoremove
-abbr aptac apt autoclean
+# abbr aptud sudo apt update
+# abbr aptug sudo apt upgrade -y
+# abbr aptin sudo apt -y install 
+# abbr aptrm sudo apt  remove 
+# abbr aptls apt list --upgradable
+# abbr aptpg sudo apt purge
+# abbr aptar sudo apt autoremove
+# abbr aptac apt autoclean
+
+# Nala
+alias apt="nala"
+alias aptud="sudo nala update && nala list --upgradeable"
+abbr aptls nala list --upgradeable
+abbr aptug sudo nala upgrade -y
+abbr aptin sudo nala install -y
+abbr aptrm sudo nala remove -y
+abbr aptpg sudo nala purge
+abbr aptar sudo nala autoremove
+abbr aptac nala autoclean
+
+
 
 # Docker containers
 # dfu-programmer

@@ -1,11 +1,11 @@
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
+# [battery]
+# full_symbol = "🔋"
+# charging_symbol = "🔌"
+# discharging_symbol = "⚡"
 
-[[battery.display]]
-threshold = 30
-style = "bold red"
+# [[battery.display]]
+# threshold = 30
+# style = "bold red"
 
 [shell]
 fish_indicator = "🐟"
@@ -59,6 +59,9 @@ disabled = true
 [python]
 format = "[$symbol $version $virtualenv]($style) "
 style = "bold green"
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
 
 [rust]
 format = "[$symbol$version]($style) "
