@@ -1,3 +1,6 @@
+set -Ux Z_DATA "$HOME/.local/share/z/data"
+set -Ux Z_DATA_DIR "$HOME/.local/share/z"
+set -Ux Z_EXCLUDE "$HOME"
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -14,10 +17,10 @@ starship init fish | source
 direnv hook fish | source
 
 # Created by `pipx` on 2022-01-16 14:58:58
-set PATH $PATH /home/awollgarten/.local/bin
+set PATH $PATH $HOME/.local/bin
 
 # pdm pep582
-set -x PYTHONPATH '/home/awollgarten/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582' $PYTHONPATH
+set -x PYTHONPATH '$HOME/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582' $PYTHONPATH
 
 # Abbreviations
 abbr -a rmi rm -i
@@ -62,3 +65,5 @@ alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
 # Window Class
 alias window-class="xprop"
 
+# CLI tools
+alias cat="bat"
