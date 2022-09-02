@@ -20,10 +20,10 @@ set PATH $PATH /home/awollgarten/.local/bin
 set -x PYTHONPATH '/home/awollgarten/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582' $PYTHONPATH
 
 # Abbreviations
-abbr rmi rm -i
-abbr rmf rm -rf
-abbr ls ls -lah --color
-abbr df df -H
+abbr -a rmi rm -i
+abbr -a rmf rm -rf
+abbr -a ls ls -lah --color
+abbr -a df df -H
 
 # Apt
 # abbr aptud sudo apt update
@@ -38,20 +38,20 @@ abbr df df -H
 # Nala
 alias apt="nala"
 alias aptud="sudo nala update && nala list --upgradeable"
-abbr aptls nala list --upgradeable
-abbr aptug sudo nala upgrade -y
-abbr aptin sudo nala install -y
-abbr aptrm sudo nala remove -y
-abbr aptpg sudo nala purge
-abbr aptar sudo nala autoremove
-abbr aptac nala autoclean
+abbr -a aptls nala list --upgradeable
+abbr -a aptug sudo nala upgrade -y
+abbr -a aptin sudo nala install -y
+abbr -a aptrm sudo nala remove -y
+abbr -a aptpg sudo nala purge
+abbr -a aptar sudo nala autoremove
+abbr -a aptac nala autoclean
 
 
 
 # Docker containers
 # dfu-programmer
-abbr dfuerase dfu-programmer atmega32u4 erase
-abbr dfuflash dfu-programmer atmega32u4 flash
+abbr -a dfuerase dfu-programmer atmega32u4 erase
+abbr -a dfuflash dfu-programmer atmega32u4 flash
 
 # SSH
 alias sshhosts='grep -P "^Host" $HOME/.ssh/config'

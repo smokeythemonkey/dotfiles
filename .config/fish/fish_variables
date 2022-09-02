@@ -20,10 +20,6 @@ SETUVAR _fish_abbr_aptls:nala\x20list\x20\x2d\x2dupgradeable
 SETUVAR _fish_abbr_aptpg:sudo\x20nala\x20purge
 SETUVAR _fish_abbr_aptrm:sudo\x20nala\x20remove\x20\x2dy
 SETUVAR _fish_abbr_aptug:sudo\x20nala\x20upgrade\x20\x2dy
-SETUVAR _fish_abbr_awsin:aws\x20sso\x20login
-SETUVAR _fish_abbr_awsout:aws\x20sso\x20logout
-SETUVAR _fish_abbr_cdkd:cdk\x20deploy\x20\x2d\x2dregion\x20eu\x2dcentral\x2d1\x20\x2d\x2dhotswap
-SETUVAR _fish_abbr_cdkls:cdk\x20ls
 SETUVAR _fish_abbr_df:df\x20\x2dH
 SETUVAR _fish_abbr_dfuerase:dfu\x2dprogrammer\x20atmega32u4\x20erase
 SETUVAR _fish_abbr_dfuflash:dfu\x2dprogrammer\x20atmega32u4\x20flash
@@ -181,8 +177,6 @@ SETUVAR _fish_abbr_gwtpr:git\x20worktree\x20prune
 SETUVAR _fish_abbr_gwtrm:git\x20worktree\x20remove
 SETUVAR _fish_abbr_gwtulo:git\x20worktree\x20unlock
 SETUVAR _fish_abbr_ls:ls\x20\x2dlah\x20\x2d\x2dcolor
-SETUVAR _fish_abbr_ras2:globalprotect\x20connect\x20\x2d\x2dportal\x20ras\x2d2\x2esimplicity\x2eag
-SETUVAR _fish_abbr_ras4:globalprotect\x20connect\x20\x2d\x2dprotal\x20ras\x2d4\x2esimplicity\x2eag
 SETUVAR _fish_abbr_rmf:rm\x20\x2drf
 SETUVAR _fish_abbr_rmi:rm\x20\x2di
 SETUVAR _fisher_gazorby_2F_fish_2D_abbreviation_2D_tips_files:\x7e/\x2econfig/fish/functions/__abbr_tips_bind_newline\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_bind_space\x2efish\x1e\x7e/\x2econfig/fish/functions/__abbr_tips_init\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/abbr_tips\x2efish
