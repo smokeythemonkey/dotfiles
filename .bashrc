@@ -134,3 +134,4 @@ case $- in
     *) return;;
 esac
 
+. "$HOME/.cargo/env"
