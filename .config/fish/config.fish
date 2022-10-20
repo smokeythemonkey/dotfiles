@@ -1,11 +1,12 @@
-set -Ux Z_DATA "$HOME/.local/share/z/data"
-set -Ux Z_DATA_DIR "$HOME/.local/share/z"
-set -Ux Z_EXCLUDE "$HOME"
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
 set -U fish_greeting "🐟"
+
+# init zoxide
+zoxide init fish | source
+set -Ux _ZO_ECHO 1
 
 # init asdf-vm
 source ~/.asdf/asdf.fish
@@ -38,6 +39,9 @@ abbr df df -H
 # abbr aptar sudo apt autoremove
 # abbr aptac apt autoclean
 
+# system update
+alias system-update="sudo nala update && nala list --upgradeable && sudo nala upgrade && flatpak update"
+
 # Nala
 alias apt="nala"
 alias aptud="sudo nala update && nala list --upgradeable"
@@ -49,9 +53,9 @@ abbr aptpg sudo nala purge
 abbr aptar sudo nala autoremove
 abbr aptac nala autoclean
 
+# linode cli
 abbr lin linode-cli
 
-# Docker containers
 # dfu-programmer
 abbr dfuerase dfu-programmer atmega32u4 erase
 abbr dfuflash dfu-programmer atmega32u4 flash
