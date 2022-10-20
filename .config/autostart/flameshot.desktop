@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Nextcloud
 GenericName=File Synchronizer
-Exec="flatpak run com.nextcloud.desktopclient.nextcloud" --background
+Exec="flatpak run org.flameshot.Flameshot"
 Terminal=false
 Icon=Nextcloud
 Categories=Network

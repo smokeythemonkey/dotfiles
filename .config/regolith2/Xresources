@@ -1,2 +1,6 @@
 !regolith.look.path: /usr/share/regolith-look/default
-regolith.look.path: /usr/share/regolith-look/default
+regolith.look.path: /usr/share/regolith-look/dracula
+i3-wm.font: Inconsolata Mono 16
+gtk.document_font_name: Inconsolata 12
+gtk.font_name: Inconsolata Mono 12
+gtk.monospace_font_name: Inconsolata Mono 12
