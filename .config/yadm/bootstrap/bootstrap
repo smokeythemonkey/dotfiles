@@ -1,59 +1,98 @@
 #!/usr/bin/env bash
 
-
+system_update(){
+    sudo nala update
+    sudo nala upgrade -y
+}
 install_apt_packages(){
-    sudo apt install fish -y
-    sudo apt install fzf -y
-    sudo apt install thunderbird -y
-    sudo apt install nextcloud-desktop -y
-    sudo apt install flameshot -y
-    sudo apt install kitty -y
-    sudo apt install code -y
-    sudo apt install timeshift -y
-    sudo apt install python-is-python3 -y
+    APPS="fish fzf thunderbird nextcloud-desktop flameshot kitty \
+        code timeshift python-is-python3 steam discord neovim picom \
+        nitrogen"
+    sudo nala install "$APPS" -y
 }
 
-# install_pacstall(){
-#     sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
-# }
+install_pacstall(){
+    printf '%s/n' y | sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
+}
 
-# install_pacstall_packages(){
-#     pacstall -I discord
-#     pacstall -I btop-bin
-#     pacstall -I vercrypt-deb
-#     pacstall -I librewolf
-# }
+install_pacstall_packages(){
+    pacstall -Ip btop-bin
+    pacstall -Ip veracrypt-deb
+    pacstall -Ip nala-deb
+
+}
 
 install_starship(){
-    curl -sS https://starship.rs/install.sh | sh
+    curl -sS https://starship.rs/install.sh | sh -s --y >> /dev/null
 }
 
 install_enpass(){
-    sudo -i 
-    echo "deb https://apt.enpass.io/ stable main" > /etc/apt/sources.list.d/enpass.list
+    sudo echo "deb https://apt.enpass.io/ stable main" | sudo tee -a /etc/apt/sources.list.d/enpass.list
     wget -O - https://apt.enpass.io/keys/enpass-linux.key | tee /etc/apt/trusted.gpg.d/enpass.asc
-    exit
-    sudo apt install update
-    sudo apt install enpass -y
+    sudo nala install update
+    sudo nala install enpass -y
 }
 
 install_asdf(){
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
-    sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev --yes
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >> /dev/null    
+}
+
+install_asdf_python(){
+    BUILD_DEPS="build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev \
+    openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev"
+    sudo nala install "$BUILD_DEPS" -y
     asdf plugin add python
     asdf install python latest
     asdf global python latest
 }
 
 install_python_tools(){
-    python -m install --user pipx
+    sudo nala install pipx -y
     pipx ensurepath
     pipx install pdm
     pipx install pre-commit
     pipx install black
 }
+
+install_asdf_go(){
+    sudo nala install coreutils -y
+    asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+    asdf install golang latest
+    asdf global golang latest
+}
+
+install_asdf_nodejs(){
+    asdf install nodejs lts
+    asdf global nodejs lts 
+}
+
+install_rustup(){
+    sudo nala install cmake -y
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
+}
+
+install_regolith(){
+    wget -qO - https://regolith-desktop.org/regolith.key | \
+    gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
+
+    echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
+    https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | \
+    sudo tee /etc/apt/sources.list.d/regolith.list
+
+    sudo nala update
+    sudo nala install regolith-desktop
+
+    i3BAR="i3xrocks-bluetooth i3xrocks-cpu-usage i3xrocks-focused-window-name i3xrocks-media-player \
+            i3xrocks-memory i3xrocks-microphone i3xrocks-net-traffic i3xrocks-rofication i3xrocks-time \
+            i3xrocks-volume regolith-i3xrocks-config"
+    sudo nala install "$i3BAR" -y
+
+    sudo nala install regolith-compositor-picom-glx -y
+
+}
+
 cleanup() {
-    sudo apt-get autoremove -y
+    sudo nala autoremove -y
 }
 
 main(){

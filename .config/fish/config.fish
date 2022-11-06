@@ -1,3 +1,4 @@
+set -Ux WEZTERM_CONFIG_FILE '$HOME/.config/wezterm/wezterm.lua'
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
