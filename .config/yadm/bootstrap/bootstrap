@@ -2,10 +2,11 @@
 
 system_update(){
     sudo nala update
-    sudo nala upgrade -y
+    sudo nala dist-upgrade -y
 }
+
 install_apt_packages(){
-    APPS="fish fzf thunderbird nextcloud-desktop flameshot kitty \
+    APPS="fish fzf thunderbird nextcloud-desktop flameshot \
         code timeshift python-is-python3 steam discord neovim picom \
         nitrogen"
     sudo nala install "$APPS" -y
@@ -16,14 +17,9 @@ install_pacstall(){
 }
 
 install_pacstall_packages(){
-    pacstall -Ip btop-bin
-    pacstall -Ip veracrypt-deb
-    pacstall -Ip nala-deb
+    APPS="btop-bin veracrypt-deb nala-deb starship-bin"
+    pacstall -Ip "$APPS"
 
-}
-
-install_starship(){
-    curl -sS https://starship.rs/install.sh | sh -s --y >> /dev/null
 }
 
 install_enpass(){
@@ -34,7 +30,10 @@ install_enpass(){
 }
 
 install_asdf(){
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >> /dev/null    
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >> /dev/null
+    install_asdf_python
+    install_asdf_go
+    install_asdf_nodejs
 }
 
 install_asdf_python(){
@@ -89,6 +88,18 @@ install_regolith(){
 
     sudo nala install regolith-compositor-picom-glx -y
 
+    i3CONFIGS="regolith-i3-base-launchers regolith-i3-default-style regolith-i3-navigation \
+    regolith-i3-networkmanager regolith-i3-next-workspace regolith-i3-resize regolith-i3-session \
+    regolith-i3-unclutter regolith-i3-user-programs regolith-i3-workspace-config"
+    
+    sudo nala remove "$i3CONFIGS" -y
+
+}
+
+install_apps(){
+    install_pacstall_packages
+    install_apt_packages
+    install_enpass
 }
 
 cleanup() {
@@ -100,11 +111,13 @@ main(){
 	while [[ $1 = -* ]]; do shift; done
 
 	if ((${#@} == 0)); then
-		install_apt_packages
-        install_starship
-        install_enpass
+        system_update
+        install_pacstall
+        install_rustup
         install_asdf
         install_python_tools
+        install_apps
+        install_regolith      
 		cleanup
 	else
 		for cmd in "$@"; do
