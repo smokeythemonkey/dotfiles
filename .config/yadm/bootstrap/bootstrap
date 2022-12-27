@@ -1,42 +1,52 @@
 #!/usr/bin/env bash
 
-system_update(){
+system_update() {
     sudo nala update
     sudo nala dist-upgrade -y
 }
 
-install_apt_packages(){
+remove_apps() {
+    sudo nala purge libreoffice\*
+    sudo nala purge geary
+}
+
+install_apt_packages() {
     APPS="fish fzf thunderbird nextcloud-desktop flameshot \
         code timeshift python-is-python3 steam discord neovim picom \
-        nitrogen"
+        nitrogen nemo"
     sudo nala install "$APPS" -y
 }
 
-install_pacstall(){
+install_pacstall() {
     printf '%s/n' y | sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
 }
 
-install_pacstall_packages(){
+install_pacstall_packages() {
     APPS="btop-bin veracrypt-deb nala-deb starship-bin"
     pacstall -Ip "$APPS"
 
 }
 
-install_enpass(){
+install_enpass() {
     sudo echo "deb https://apt.enpass.io/ stable main" | sudo tee -a /etc/apt/sources.list.d/enpass.list
     wget -O - https://apt.enpass.io/keys/enpass-linux.key | tee /etc/apt/trusted.gpg.d/enpass.asc
     sudo nala install update
     sudo nala install enpass -y
 }
 
-install_asdf(){
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >> /dev/null
+install_wez_term() {
+    curl -LO https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
+    sudo nala install -y ./wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
+}
+
+install_asdf() {
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >>/dev/null
     install_asdf_python
     install_asdf_go
     install_asdf_nodejs
 }
 
-install_asdf_python(){
+install_asdf_python() {
     BUILD_DEPS="build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev \
     openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev"
     sudo nala install "$BUILD_DEPS" -y
@@ -45,7 +55,7 @@ install_asdf_python(){
     asdf global python latest
 }
 
-install_python_tools(){
+install_python_tools() {
     sudo nala install pipx -y
     pipx ensurepath
     pipx install pdm
@@ -53,30 +63,30 @@ install_python_tools(){
     pipx install black
 }
 
-install_asdf_go(){
+install_asdf_go() {
     sudo nala install coreutils -y
     asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
     asdf install golang latest
     asdf global golang latest
 }
 
-install_asdf_nodejs(){
+install_asdf_nodejs() {
     asdf install nodejs lts
-    asdf global nodejs lts 
+    asdf global nodejs lts
 }
 
-install_rustup(){
+install_rustup() {
     sudo nala install cmake -y
     curl https://sh.rustup.rs -sSf | sh -s -- -y
 }
 
-install_regolith(){
-    wget -qO - https://regolith-desktop.org/regolith.key | \
-    gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
+install_regolith() {
+    wget -qO - https://regolith-desktop.org/regolith.key |
+        gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg >/dev/null
 
     echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
-    https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | \
-    sudo tee /etc/apt/sources.list.d/regolith.list
+    https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" |
+        sudo tee /etc/apt/sources.list.d/regolith.list
 
     sudo nala update
     sudo nala install regolith-desktop
@@ -91,39 +101,44 @@ install_regolith(){
     i3CONFIGS="regolith-i3-base-launchers regolith-i3-default-style regolith-i3-navigation \
     regolith-i3-networkmanager regolith-i3-next-workspace regolith-i3-resize regolith-i3-session \
     regolith-i3-unclutter regolith-i3-user-programs regolith-i3-workspace-config"
-    
+
     sudo nala remove "$i3CONFIGS" -y
 
 }
 
-install_apps(){
-    install_pacstall_packages
+install_apps() {
     install_apt_packages
     install_enpass
 }
 
+set_defaults() {
+    #nemo
+    xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+}
 cleanup() {
     sudo nala autoremove -y
 }
 
-main(){
+main() {
     process_flags "$@"
-	while [[ $1 = -* ]]; do shift; done
+    while [[ $1 = -* ]]; do shift; done
 
-	if ((${#@} == 0)); then
-        system_update
+    if ((${#@} == 0)); then
+        remove_apps
         install_pacstall
+        system_update
         install_rustup
         install_asdf
         install_python_tools
         install_apps
-        install_regolith      
-		cleanup
-	else
-		for cmd in "$@"; do
-			"$cmd"
-		done
-	fi
+        install_wez_term
+        install_regolith
+        cleanup
+    else
+        for cmd in "$@"; do
+            "$cmd"
+        done
+    fi
 }
 
 main "$@"

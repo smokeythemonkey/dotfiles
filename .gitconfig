@@ -3,3 +3,5 @@
 [user]
 	name = awollgarten
 	email = awollgarten@posteo.net
+[core]
+	editor = code -w
