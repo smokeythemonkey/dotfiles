@@ -41,7 +41,7 @@ install_pacstall() {
 
 install_pacstall_packages() {
     echo "installing packages with pacstall"
-    pacstall -Ip btop-bin \
+    pacstall -IP btop-bin \
         veracrypt-deb \
         nala-deb \
         starship-bin
@@ -182,8 +182,9 @@ install_regolith() {
 }
 
 install_apps() {
-    install_apt_packages
     install_pacstall
+    install_apt_packages
+    install_pacstall_packages
     # install_enpass
 }
 
