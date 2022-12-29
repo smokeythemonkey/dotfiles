@@ -16,7 +16,7 @@ source ~/.asdf/asdf.fish
 starship init fish | source
 
 # direnv hook
-direnv hook fish | source
+#direnv hook fish | source
 
 # Created by `pipx` on 2022-01-16 14:58:58
 set PATH $PATH $HOME/.local/bin
