@@ -4,5 +4,5 @@ gtk.font_name: Inconsolata Mono 12
 gtk.monospace_font_name: Inconsolata Mono 12
 !regolith.look.path: /usr/share/regolith-look/solarized-dark
 regolith.look.path: /usr/share/regolith-look/blackhole
-regolith.wallpaper.file: ~/Pictures/Wallpapers/Boomer-3.jpg
-regolith.lockscreen.wallpaper.file: ~/Pictures/Wallpapers/bonn-1.jpg
+regolith.wallpaper.file: ~/Pictures/shared/Wallpapers/Boomer-3.jpg
+regolith.lockscreen.wallpaper.file: ~/Pictures/shared/Wallpapers/bonn-1.jpg
