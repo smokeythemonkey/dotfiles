@@ -1,51 +1,60 @@
 #!/usr/bin/env bash
 
 system_update() {
-    sudo nala update
-    sudo nala dist-upgrade -y
+    echo "updating system"
+    sudo apt update
+    sudo apt dist-upgrade -y
 }
 
 remove_apps() {
-    sudo apt purge libreoffice\*
-    sudo apt purge geary
+    echo "removing libreoffice and geary"
+    sudo apt purge libreoffice\* -y
+    sudo apt purge geary -y
 }
 
 install_apt_packages() {
+    echo "installing deb packages"
     APPS="fish fzf thunderbird nextcloud-desktop flameshot \
         code timeshift python-is-python3 steam discord neovim picom \
         nitrogen nemo"
-    sudo nala install "$APPS" -y
+    sudo apt install "$APPS" -y
 }
 
 configure_default_apps() {
+    echo "configuring nemo"
     xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
     gsettings set org.gnome.shell.extensions.ding use-nemo true
     gsettings set org.gnome.shell.extensions.ding show-home true
 }
 
 install_pacstall() {
+    echo "installing pacstall"
     printf '%s/n' y | sudo bash -c "$(curl -fsSL https://git.io/JsADh || wget -q https://git.io/JsADh -O -)"
 }
 
 install_pacstall_packages() {
+    echo "installing packages with pacstall"
     APPS="btop-bin veracrypt-deb nala-deb starship-bin"
     pacstall -Ip "$APPS"
 
 }
 
 install_enpass() {
+    echo "installing enpass"
     sudo echo "deb https://apt.enpass.io/ stable main" | sudo tee -a /etc/apt/sources.list.d/enpass.list
     wget -O - https://apt.enpass.io/keys/enpass-linux.key | tee /etc/apt/trusted.gpg.d/enpass.asc
-    sudo nala install update
-    sudo nala install enpass -y
+    sudo apt install update
+    sudo apt install enpass -y
 }
 
 install_wez_term() {
+    echo "installing wezterm"
     curl -LO https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
-    sudo nala install -y ./wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
+    sudo apt install -y ./wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
 }
 
 install_asdf() {
+    echo "installing asdf"
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >>/dev/null
     install_asdf_python
     install_asdf_go
@@ -55,14 +64,14 @@ install_asdf() {
 install_asdf_python() {
     BUILD_DEPS="build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev \
     openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev"
-    sudo nala install "$BUILD_DEPS" -y
+    sudo apt install "$BUILD_DEPS" -y
     asdf plugin add python
     asdf install python latest
     asdf global python latest
 }
 
 install_python_tools() {
-    sudo nala install pipx -y
+    sudo apt install pipx -y
     pipx ensurepath
     pipx install pdm
     pipx install pre-commit
@@ -70,7 +79,7 @@ install_python_tools() {
 }
 
 install_asdf_go() {
-    sudo nala install coreutils -y
+    sudo apt install coreutils -y
     asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
     asdf install golang latest
     asdf global golang latest
@@ -82,11 +91,13 @@ install_asdf_nodejs() {
 }
 
 install_rustup() {
-    sudo nala install cmake -y
+    echo "installing rustup"
+    sudo apt install cmake -y
     curl https://sh.rustup.rs -sSf | sh -s -- -y
 }
 
 install_regolith() {
+    echo "installing regolith"
     wget -qO - https://regolith-desktop.org/regolith.key |
         gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg >/dev/null
 
@@ -94,35 +105,32 @@ install_regolith() {
     https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" |
         sudo tee /etc/apt/sources.list.d/regolith.list
 
-    sudo nala update
-    sudo nala install regolith-desktop
+    sudo apt update
+    sudo apt install regolith-desktop
 
     i3BAR="i3xrocks-bluetooth i3xrocks-cpu-usage i3xrocks-focused-window-name i3xrocks-media-player \
             i3xrocks-memory i3xrocks-microphone i3xrocks-net-traffic i3xrocks-rofication i3xrocks-time \
             i3xrocks-volume regolith-i3xrocks-config"
-    sudo nala install "$i3BAR" -y
+    sudo apt install "$i3BAR" -y
 
-    sudo nala install regolith-compositor-picom-glx -y
+    sudo apt install regolith-compositor-picom-glx -y
 
     i3CONFIGS="regolith-i3-base-launchers regolith-i3-default-style regolith-i3-navigation \
     regolith-i3-networkmanager regolith-i3-next-workspace regolith-i3-resize regolith-i3-session \
     regolith-i3-unclutter regolith-i3-user-programs regolith-i3-workspace-config"
 
-    sudo nala remove "$i3CONFIGS" -y
+    sudo apt remove "$i3CONFIGS" -y
 
 }
 
 install_apps() {
     install_apt_packages
+    install_pacstall
     install_enpass
 }
 
-set_defaults() {
-    #nemo
-    xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-}
 cleanup() {
-    sudo nala autoremove -y
+    sudo apt autoremove -y
 }
 
 main() {
@@ -131,12 +139,12 @@ main() {
 
     if ((${#@} == 0)); then
         remove_apps
-        install_pacstall
         system_update
+        install_apps
         install_rustup
         install_asdf
         install_python_tools
-        install_apps
+        configure_default_apps
         install_wez_term
         install_regolith
         cleanup
