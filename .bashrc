@@ -135,3 +135,6 @@ case $- in
 esac
 
 . "$HOME/.cargo/env"
+
+# Created by `pipx` on 2022-12-29 23:02:28
+export PATH="$PATH:/home/awollgarten/.local/bin"

@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Nextcloud
-GenericName=File Synchronizer
-Exec="flatpak run org.flameshot.Flameshot"
+Name=Flameshot
+GenericName=Screenshot tool
+Exec="flameshot"
 Terminal=false
-Icon=Nextcloud
-Categories=Network
+Icon=Flameshot
+Categories=Images
 Type=Application
 StartupNotify=false
 X-GNOME-Autostart-enabled=true
-X-GNOME-Autostart-Delay=10
+X-GNOME-Autostart-Delay=2
