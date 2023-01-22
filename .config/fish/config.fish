@@ -3,7 +3,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -U fish_greeting "🐟"
+set -U fish_greeting
 
 # init zoxide
 zoxide init fish | source
@@ -41,7 +41,7 @@ abbr df df -H
 # abbr aptac apt autoclean
 
 # system update
-alias system-update="sudo nala update && nala list --upgradeable && sudo nala upgrade && flatpak update"
+alias system-update="sudo nala update && sudo nala upgrade && pacstall -Up"
 
 # Nala
 alias apt="nala"
@@ -72,3 +72,10 @@ alias window-class="xprop"
 
 # CLI tools
 alias cat="bat"
+alias lg="lazygit"
+
+# web-search
+alias ddg="web-search duckduckgo"
+alias sof="web-search stackoverflow"
+alias yts="web-search youtube"
+
