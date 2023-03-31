@@ -60,7 +60,7 @@ abbr lin linode-cli
 # dfu-programmer
 abbr dfuerase dfu-programmer atmega32u4 erase
 abbr dfuflash dfu-programmer atmega32u4 flash
-
+abbr qmk compile -kb lily58 -km smokeythemonkey
 # SSH
 alias sshhosts='grep -P "^Host" $HOME/.ssh/config'
 

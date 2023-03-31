@@ -16,7 +16,6 @@ install_apt_packages() {
     echo "installing deb packages"
     sudo apt install -y thunderbird \
         nextcloud-desktop \
-        flameshot \
         code \
         timeshift \
         python-is-python3 \
@@ -44,7 +43,6 @@ install_pacstall_packages() {
     pacstall -IP btop-bin \
         veracrypt-deb \
         nala-deb \
-        starship-bin
 }
 
 install_enpass() {
@@ -60,8 +58,9 @@ install_terminal_tools() {
     curl -LO https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
     sudo apt install -y ./wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
     sudo update-alternatives --config x-terminal-emulator
-    # echo "installing starship prompt"
-    # curl -sS https://starship.rs/install.sh | sh
+
+    echo "installing starship prompt"
+    pacstall -IP starship-bin
 
     echo "installing fish"
     sudo apt install -y fish
@@ -169,25 +168,22 @@ install_regolith() {
 
     sudo apt install -y regolith-compositor-picom-glx
 
-    # sudo apt remove -y regolith-i3-base-launchers \
-    #     regolith-i3-default-style \
-    #     regolith-i3-navigation \
-    #     regolith-i3-networkmanager \
-    #     regolith-i3-next-workspace \
-    #     regolith-i3-resize \
-    #     regolith-i3-session \
-    #     regolith-i3-unclutter \
-    #     regolith-i3-user-programs \
-    #     regolith-i3-workspace-config
-
     sudo apt install -y regolith-look-blackhole \
         regolith-look-ayu-dark
-
-    sudo apt install -y fonts-inconsolata
-    sudo apt install -y fonts-nerd-font-inconsolata
-
 }
 
+setup_pop_shell(){
+    echo "setting pop shell keybindings"
+    sudo chmod +x $HOME/.config/yadm/pop_os_shortcuts.sh
+    $HOME/.config/yadm/pop_os_shortcuts.sh
+}
+
+
+install_fonts(){
+    echo "installing inconsolata font"
+    sudo apt install -y fonts-nerd-font-inconsolata
+    sudo apt install -y fonts-inconsolata
+}
 install_apps() {
     install_pacstall
     install_apt_packages
@@ -213,7 +209,9 @@ main() {
         install_python_tools
         configure_default_apps
         install_terminal_tools
-        install_regolith
+        setup_pop_shell
+        install_fonts
+        #        install_regolith
         cleanup
     else
         for cmd in "$@"; do

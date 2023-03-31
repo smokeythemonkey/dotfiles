@@ -14,3 +14,5 @@ regolith.lockscreen.wallpaper.file: ~/Pictures/shared/Wallpapers/bonn-1.jpg
 !regolith.look.path: /usr/share/regolith-look/default
 regolith.look.path: /usr/share/regolith-look/dracula
 
+i3-wm.program.files: /usr/bin/nemo
+
