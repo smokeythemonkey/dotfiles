@@ -5,6 +5,11 @@ system_update() {
     sudo apt update
     sudo apt -y dist-upgrade
 }
+setup_acpi_wakeup_fix(){
+    sudo cp $HOME/Utils/system-scripts/disable-devices-as-wakeup.service /etc/systemd/system/
+    sudo systemctl enable disable-devices-as-wakeup.service
+    sudo systemctl start disable-devices-as-wakeup.service
+}
 
 remove_apps() {
     echo "removing libreoffice and geary"
@@ -57,6 +62,7 @@ install_terminal_tools() {
     echo "installing wezterm"
     curl -LO https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
     sudo apt install -y ./wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
+    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/open-wezterm-here 20
     sudo update-alternatives --config x-terminal-emulator
 
     echo "installing starship prompt"
@@ -79,6 +85,9 @@ install_terminal_tools() {
 
     echo "installing zoxide"
     sudo apt install -y zoxide
+
+    echo "installing neovim"
+    pacstall -IP neovim
 
     echo "installing lvim"
     LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
