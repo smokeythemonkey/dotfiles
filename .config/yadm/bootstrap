@@ -5,7 +5,8 @@ system_update() {
     sudo apt update
     sudo apt -y dist-upgrade
 }
-setup_acpi_wakeup_fix(){
+
+setup_acpi_wakeup_fix() {
     sudo cp $HOME/Utils/system-scripts/disable-devices-as-wakeup.service /etc/systemd/system/
     sudo systemctl enable disable-devices-as-wakeup.service
     sudo systemctl start disable-devices-as-wakeup.service
@@ -47,7 +48,7 @@ install_pacstall_packages() {
     echo "installing packages with pacstall"
     pacstall -IP btop-bin \
         veracrypt-deb \
-        nala-deb \
+        nala-deb
 }
 
 install_enpass() {
@@ -183,13 +184,13 @@ install_regolith() {
         regolith-look-ayu-dark
 }
 
-setup_pop_shell(){
+setup_pop_shell() {
     echo "setting pop shell keybindings"
     sudo chmod +x $HOME/.config/yadm/pop_os_shortcuts.sh
     $HOME/.config/yadm/pop_os_shortcuts.sh
 }
 
-install_gnome_extension(){
+install_gnome_extension() {
   sudo dconf load /org/gnome/shell/extensions/ < $HOME/.config/.gnome-backup/extensions.conf
 }
 install_fonts(){
