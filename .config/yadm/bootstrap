@@ -209,29 +209,21 @@ cleanup() {
     sudo apt autoremove -y
 }
 
-main() {
-    process_flags "$@"
-    while [[ $1 = -* ]]; do shift; done
-
-    if ((${#@} == 0)); then
-        remove_apps
-        system_update
-        install_apps
-        install_rustup
-        install_asdf
-        install_python_tools
-        configure_default_apps
-        install_terminal_tools
-        setup_pop_shell
-        install_gnome_extension
-        install_fonts
-        #        install_regolith
-        cleanup
-    else
-        for cmd in "$@"; do
-            "$cmd"
-        done
-    fi
+main() {  
+    remove_apps
+    system_update
+    install_apps
+    install_rustup
+    install_asdf
+    install_python_tools
+    configure_default_apps
+    install_terminal_tools
+    setup_pop_shell
+    install_gnome_extension
+    install_fonts
+    #        install_regolith
+    cleanup
+   
 }
 
-main "$@"
+main
