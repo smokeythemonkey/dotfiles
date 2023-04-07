@@ -60,8 +60,7 @@ install_enpass() {
 
 install_terminal_tools() {
     echo "installing wezterm"
-    curl -LO https://github.com/wez/wezterm/releases/download/20221119-145034-49b9839f/wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
-    sudo apt install -y ./wezterm-20221119-145034-49b9839f.Ubuntu22.04.deb
+    pacstall -IP wezterm-bin
     sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/open-wezterm-here 20
     sudo update-alternatives --config x-terminal-emulator
 
