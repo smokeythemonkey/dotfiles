@@ -33,4 +33,4 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Super><Sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Super><Shift>9']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-10 "['<Super><Shift>0']"
 gsettings set org.gnome.desktop.wm.keybindings minimize "['<Super><Shift><Q>']"
-gesttings set org.gnome.settings-daemon.plugins.media-keys control-center "['<Super>c']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys control-center "['<Super>c']"
