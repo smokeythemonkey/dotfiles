@@ -27,8 +27,6 @@ install_apt_packages() {
         python-is-python3 \
         steam \
         discord \
-        neovim \
-        picom \
         nemo
 }
 
@@ -57,7 +55,7 @@ install_flatpak_packages() {
 
 install_enpass() {
     echo "installing enpass"
-
+    pacstall -IP enpass-bin
 }
 
 install_terminal_tools() {
@@ -196,9 +194,9 @@ setup_pop_shell() {
     $HOME/.config/yadm/pop_os_shortcuts.sh
 }
 
-install_gnome_extension() {
-    sudo dconf load /org/gnome/shell/extensions/ <$HOME/.config/.gnome-backup/extensions.conf
-}
+# install_gnome_extension() {
+#     sudo dconf load /org/gnome/shell/extensions/ <$HOME/.config/.gnome-backup/extensions.conf
+# }
 
 install_fonts() {
     echo "installing nerd-fonts"
