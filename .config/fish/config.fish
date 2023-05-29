@@ -19,7 +19,7 @@ set PATH $PATH $HOME/.local/bin
 abbr rmi rm -i
 abbr rmf rm -rf
 
-abbr ls exa --long -la
+abbr ls exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user -l
 abbr df df -H
 abbr du dust
 
@@ -67,3 +67,4 @@ alias sof="web-search stackoverflow"
 alias yts="web-search youtube"
 
 rtx activate fish | source
+fish_add_path $HOME/.local/share/rtx/shims

@@ -32,7 +32,8 @@ install_apt_packages() {
         discord \
         nemo \
         alacritty \
-        ripgrep
+        ripgrep \
+        exa
 }
 
 configure_default_apps() {
@@ -101,12 +102,13 @@ install_terminal_tools() {
 
 install_cargo() {
     sudo apt install -y libdbus-1-dev libncursesw5-dev libpulse-dev libssl-dev libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
-    cargo install ncspot
-    cargo install sccache
-    cargo install zellij
-    cargo install wiki-tui
-    cargo install gitui
-    cargo install rtx-cli
+    cargo install ncspot \
+    sccache \
+    zellij \
+    wiki-tui \
+    gitui \
+    rtx-cli \
+    du-dust
 }
 
 setup_rtx() {
@@ -120,6 +122,8 @@ install_python_tools() {
     pipx ensurepath
     pipx install pre-commit
     pipx install black
+    pipx install qmk
+    pipx install ruff
 }
 
 
