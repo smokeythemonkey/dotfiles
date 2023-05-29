@@ -115,26 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
-TERM=xterm
-
-# asdf config
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-# starshipt prompt
-eval "$(starship init bash)"
-#eval "$(asdf exec direnv hook bash)"
-#eval "$(pipenv --completion)"
-
-# If not running interactively, don't do anything
-case $- in
-  *i*) ;;
-    *) return;;
-esac
-
 . "$HOME/.cargo/env"
 
-# Created by `pipx` on 2022-12-29 23:02:28
+# Created by `pipx` on 2023-04-08 06:30:47
 export PATH="$PATH:/home/awollgarten/.local/bin"

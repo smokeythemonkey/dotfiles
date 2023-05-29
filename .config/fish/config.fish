@@ -1,6 +1,6 @@
-set -Ux WEZTERM_CONFIG_FILE '$HOME/.config/wezterm/wezterm.lua'
+# set -Ux WEZTERM_CONFIG_FILE '$HOME/.config/wezterm/wezterm.lua'
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+#  eval (zellij setup --generate-auto-start fish | string collect)
 end
 
 set -U fish_greeting
@@ -9,33 +9,22 @@ set -U fish_greeting
 zoxide init fish | source
 set -Ux _ZO_ECHO 1
 
-# init asdf-vm
-source ~/.asdf/asdf.fish
-
 # init starship prompt
 starship init fish | source
 
 # Created by `pipx` on 2022-01-16 14:58:58
 set PATH $PATH $HOME/.local/bin
 
-# pdm pep582
-set -x PYTHONPATH '$HOME/.local/pipx/venvs/pdm/lib/python3.10/site-packages/pdm/pep582' $PYTHONPATH
-
 # Abbreviations
 abbr rmi rm -i
 abbr rmf rm -rf
-abbr ls ls -lah --color
-abbr df df -H
 
-# Apt
-# abbr aptud sudo apt update
-# abbr aptug sudo apt upgrade -y
-# abbr aptin sudo apt -y install 
-# abbr aptrm sudo apt  remove 
-# abbr aptls apt list --upgradable
-# abbr aptpg sudo apt purge
-# abbr aptar sudo apt autoremove
-# abbr aptac apt autoclean
+abbr ls exa --long -la
+abbr df df -H
+abbr du dust
+
+abbr asdf rtx
+abbr zz zellij
 
 # system update
 alias system-update="sudo nala update && sudo nala upgrade && pacstall -Up"
@@ -57,9 +46,10 @@ abbr lin linode-cli
 # dfu-programmer
 abbr dfuerase dfu-programmer atmega32u4 erase
 abbr dfuflash dfu-programmer atmega32u4 flash
-abbr qmk compile -kb lily58 -km smokeythemonkey
+abbr qmkstm compile -kb lily58 -km smokeythemonkey
+
 # SSH
-alias sshhosts='grep -P "^Host" $HOME/.ssh/config'
+alias sshhosts='rg "^Host" $HOME/.ssh/config'
 
 # Disk
 alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"'
@@ -69,10 +59,11 @@ alias window-class="xprop"
 
 # CLI tools
 alias cat="bat"
-alias lg="lazygit"
+
 
 # web-search
 alias ddg="web-search duckduckgo"
 alias sof="web-search stackoverflow"
 alias yts="web-search youtube"
 
+rtx activate fish | source

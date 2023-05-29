@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# TODO: separate out functions
+# add trezor-app
+# add unity3d-app
 
 system_update() {
     echo "updating system"
@@ -20,14 +23,16 @@ remove_apps() {
 
 install_apt_packages() {
     echo "installing deb packages"
-    sudo nala install -y thunderbird \
+    sudo apt install -y thunderbird \
         nextcloud-desktop \
         code \
         timeshift \
         python-is-python3 \
         steam \
         discord \
-        nemo
+        nemo \
+        alacritty \
+        ripgrep
 }
 
 configure_default_apps() {
@@ -68,22 +73,22 @@ install_terminal_tools() {
     pacstall -IP starship-bin
 
     echo "installing fish"
-    sudo nala install -y fish
+    sudo apt install -y fish
 
     echo "installing fzf"
-    sudo nala install -y fzf
+    sudo apt install -y fzf
 
     mkdir -p ~/.local/bin
     echo "installing bat"
-    sudo nala install -y bat
+    sudo apt install -y bat
     ln -s /usr/bin/batcat ~/.local/bin/bat
 
     echo "installing fd"
-    sudo nala install fd-find
+    sudo apt install -y fd-find
     ln -s $(which fdfind) ~/.local/bin/fd
 
     echo "installing zoxide"
-    sudo nala install -y zoxide
+    sudo apt install -y zoxide
 
     echo "installing neovim"
     asdf plugin add neovim
@@ -94,43 +99,21 @@ install_terminal_tools() {
     LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 }
 
-install_ncspot() {
-    sudo nala install -y libdbus-1-dev libncursesw5-dev libpulse-dev libssl-dev libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
+install_cargo() {
+    sudo apt install -y libdbus-1-dev libncursesw5-dev libpulse-dev libssl-dev libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
     cargo install ncspot
+    cargo install sccache
+    cargo install zellij
+    cargo install wiki-tui
+    cargo install gitui
+    cargo install rtx-cli
 }
 
-install_asdf() {
-    echo "installing asdf"
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0 >>/dev/null
-    . $HOME/.asdf/asdf.sh
-    install_asdf_python
-    install_asdf_go
-    install_asdf_nodejs
-}
+setup_rtx() {
+    echo "configuring rtx"
+    rtx install
+  }
 
-install_asdf_python() {
-    sudo nala install -y build-essential \
-        libsqlite3-dev \
-        sqlite3 \
-        bzip2 \
-        libbz2-dev \
-        zlib1g-dev \
-        libssl-dev \
-        openssl \
-        libgdbm-dev \
-        libgdbm-compat-dev \
-        liblzma-dev \
-        libreadline-dev \
-        libncursesw5-dev \
-        libffi-dev \
-        uuid-dev
-    asdf plugin add python
-    asdf install python latest
-    asdf global python latest
-    asdf plugin add pdm
-    asdf install pdm latest
-    asdf global pdm latest
-}
 
 install_python_tools() {
     sudo nala install -y pipx
@@ -139,18 +122,6 @@ install_python_tools() {
     pipx install black
 }
 
-install_asdf_go() {
-    sudo nala install -y coreutils
-    asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-    asdf install golang latest
-    asdf global golang latest
-}
-
-install_asdf_nodejs() {
-    asdf plugin add nodejs
-    asdf install nodejs lts
-    asdf global nodejs lts
-}
 
 install_rustup() {
     echo "installing rustup"
@@ -158,45 +129,11 @@ install_rustup() {
     curl https://sh.rustup.rs -sSf | sh -s -- -y
 }
 
-install_regolith() {
-    echo "installing regolith"
-    wget -qO - https://regolith-desktop.org/regolith.key |
-        gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg >/dev/null
-
-    echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
-    https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" |
-        sudo tee /etc/apt/sources.list.d/regolith.list
-
-    sudo apt update
-    sudo apt install regolith-desktop
-
-    sudo apt install -y i3xrocks-bluetooth \
-        i3xrocks-cpu-usage \
-        i3xrocks-focused-window-name \
-        i3xrocks-media-player \
-        i3xrocks-memory \
-        i3xrocks-microphone \
-        i3xrocks-net-traffic \
-        i3xrocks-rofication \
-        i3xrocks-time \
-        i3xrocks-volume \
-        regolith-i3xrocks-config
-
-    sudo apt install -y regolith-compositor-picom-glx
-
-    sudo apt install -y regolith-look-blackhole \
-        regolith-look-ayu-dark
-}
-
 setup_pop_shell() {
     echo "setting pop shell keybindings"
     sudo chmod +x $HOME/.config/yadm/pop_os_shortcuts.sh
     $HOME/.config/yadm/pop_os_shortcuts.sh
 }
-
-# install_gnome_extension() {
-#     sudo dconf load /org/gnome/shell/extensions/ <$HOME/.config/.gnome-backup/extensions.conf
-# }
 
 install_fonts() {
     echo "installing nerd-fonts"
@@ -209,7 +146,7 @@ install_apps() {
     install_pacstall_packages
     install_apt_packages
     install_flatpak_packages
-    install_ncspot
+    install_cargo
     install_enpass
 }
 
@@ -222,15 +159,13 @@ main() {
     system_update
     install_apps
     install_rustup
-    install_asdf
+    setup_rtx
     install_python_tools
     configure_default_apps
     install_terminal_tools
     setup_pop_shell
-    install_gnome_extension
     install_fonts
     cleanup
-
 }
 
 main

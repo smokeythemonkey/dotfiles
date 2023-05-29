@@ -1,0 +1,22 @@
+font:
+  normal:
+    family: Noto Mono
+    style: Light
+  bold:
+    family: Noto Mono 
+    style: Book
+  italic:
+    family: Noto Mono
+    style: Light Italic
+  bold_italic:
+    family: Noto Mono
+    style: Book Italic
+  size: 11.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+shell:
+  program: /bin/fish
