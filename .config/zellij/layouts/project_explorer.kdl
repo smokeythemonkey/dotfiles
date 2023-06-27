@@ -1,0 +1,16 @@
+layout {
+    pane split_direction="vertical" {
+        pane
+        pane split_direction="horizontal" {
+            pane command="exa" {
+                args "--color" "always" "-l"
+            }
+            pane command="git" {
+                args "log" "--oneline" "--decorate" "--color" "--graph"
+            }
+        }
+    }
+    pane size=1 borderless=true{
+        plugin location="zellij:compact-bar"
+    }
+}

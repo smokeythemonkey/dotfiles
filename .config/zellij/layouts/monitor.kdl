@@ -1,0 +1,11 @@
+layout {
+    pane split_direction="horizontal" { 
+        pane
+        pane command="btm" 
+        // pane command="s-tui"
+        
+    }
+    pane size=1 borderless=true{
+        plugin location="zellij:compact-bar"
+    }
+}

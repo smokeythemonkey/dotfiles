@@ -76,9 +76,6 @@ install_terminal_tools() {
     echo "installing fish"
     sudo apt install -y fish
 
-    echo "installing fzf"
-    sudo apt install -y fzf
-
     mkdir -p ~/.local/bin
     echo "installing bat"
     sudo apt install -y bat
@@ -91,31 +88,28 @@ install_terminal_tools() {
     echo "installing zoxide"
     sudo apt install -y zoxide
 
-    echo "installing neovim"
-    asdf plugin add neovim
-    asdf install neovim 0.8.3
-    asdf global neovim 0.8.3
-
     echo "installing lvim"
     LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 }
 
 install_cargo() {
+    echo "installing cargo crates"
     sudo apt install -y libdbus-1-dev libncursesw5-dev libpulse-dev libssl-dev libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
+    cargo install sccache
     cargo install ncspot \
-    sccache \
-    zellij \
-    wiki-tui \
-    gitui \
-    rtx-cli \
-    du-dust
+        zellij \
+        wiki-tui \
+        gitui \
+        rtx-cli \
+        du-dust \
+        skim
 }
 
 setup_rtx() {
     echo "configuring rtx"
+    rtx activate
     rtx install
-  }
-
+}
 
 install_python_tools() {
     sudo nala install -y pipx
@@ -125,7 +119,6 @@ install_python_tools() {
     pipx install qmk
     pipx install ruff
 }
-
 
 install_rustup() {
     echo "installing rustup"
@@ -161,14 +154,14 @@ cleanup() {
 main() {
     remove_apps
     system_update
-    install_apps
     install_rustup
+    install_apps
     setup_rtx
     install_python_tools
-    configure_default_apps
     install_terminal_tools
     setup_pop_shell
     install_fonts
+    configure_default_apps
     cleanup
 }
 

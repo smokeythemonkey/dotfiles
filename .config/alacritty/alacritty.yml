@@ -1,15 +1,15 @@
 font:
   normal:
-    family: Noto Mono
-    style: Light
+    family: FiraCode Nerd Font Mono
+    style: Regular
   bold:
-    family: Noto Mono 
-    style: Book
+    family: FiraCode Nerd Font Mono 
+    style: SemiBold
   italic:
-    family: Noto Mono
+    family: FiraCode Nerd Font Mono
     style: Light Italic
   bold_italic:
-    family: Noto Mono
+    family: FiraCode Nerd Font Mono
     style: Book Italic
   size: 11.0
   offset:

@@ -205,7 +205,7 @@ default_shell "fish"
 //   - true (default)
 //   - false
 //
-// pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -218,31 +218,30 @@ auto_layout true
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
-// themes {
-//     dracula {
-//         fg 248 248 242
-//         bg 40 42 54
-//         red 255 85 85
-//         green 80 250 123
-//         yellow 241 250 140
-//         blue 98 114 164
-//         magenta 255 121 198
-//         orange 255 184 108
-//         cyan 139 233 253
-//         black 0 0 0
-//         white 255 255 255
-//     }
-// }
-
+themes {
+    one-half-dark {
+        fg 220 223 228
+        bg 40 44 52
+        black 27 29 35
+        red 227 63 76
+        green 152 195 121
+        yellow 229 192 123
+        blue 97 175 239
+        magenta 198 120 221
+        cyan 86 182 194
+        white 233 225 254
+        orange 216 133 76
+    }
+}
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "one-half-dark"
+//theme "one-half-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -272,7 +271,7 @@ theme "one-half-dark"
 // that will be used by default if this option is not set.
 // Examples:
 //
-// copy_command "xclip -selection clipboard" // x11
+copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 
@@ -288,7 +287,7 @@ theme "one-half-dark"
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true
 //
-// copy_on_select false
+copy_on_select true
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
