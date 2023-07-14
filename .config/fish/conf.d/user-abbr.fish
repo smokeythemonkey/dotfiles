@@ -5,7 +5,6 @@ abbr rmf rm -rf
 # abbr ls exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user -l
 alias ls="exa"
 alias l="exa -l --all --group-directories-first --icons --time-style=long-iso"
-alias ll="exa -l --all --all --group-directories-first --icons --time-style=long-iso"
 alias lt="exa -T --level=2 --group-directories-first"
 alias llt="exa -lT --level=2 --group-directories-first"
 alias lT="exa -T --level=4 --group-directories-first"
