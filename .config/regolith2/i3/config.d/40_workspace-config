@@ -66,6 +66,8 @@ bindsym $mod+$i3-wm.binding.move_scratchpad move to scratchpad
 set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode Shift+t
 bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith
 
+bindsym $mod+t layout toggle tabbed splith splitv
+
 ## Modify // Window Layout Mode // <> t ##
 #set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode t
 #bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith splitv 
