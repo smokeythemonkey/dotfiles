@@ -3,11 +3,11 @@ abbr rmi rm -i
 abbr rmf rm -rf
 
 # abbr ls exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user -l
-alias l="exa"
-alias ls="exa -l --all --group-directories-first --icons --time-style=long-iso"
-alias lt="exa -T --level=2 --group-directories-first"
-alias llt="exa -lT --level=2 --group-directories-first"
-alias lT="exa -T --level=4 --group-directories-first"
+alias l="eza"
+alias ls="eza -l --all --group-directories-first --icons --time-style=long-iso"
+alias lt="eza -T --level=2 --group-directories-first"
+alias llt="eza -lT --level=2 --group-directories-first"
+alias lT="eza -T --level=4 --group-directories-first"
 
 abbr df df -H
 abbr du dust
@@ -38,7 +38,7 @@ abbr dfuflash dfu-programmer atmega32u4 flash
 abbr qmkstm compile -kb lily58 -km smokeythemonkey
 
 # SSH
-alias sshhosts='rg "^Host" $HOME/.ssh/config'
+alias sshls='rg "^Host" $HOME/.ssh/config'
 abbr sshkeygen ssh-keygen -t ed25519 (whoami)@(hostname)-(date -I) -f ~/.ssh/
 
 # Disk
