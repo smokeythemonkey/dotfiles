@@ -64,9 +64,9 @@ bindsym $mod+$i3-wm.binding.move_scratchpad move to scratchpad
 
 ## Modify // Tile/Float Focus Toggle // <><Shift> t ##
 set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode Shift+t
-bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith
+bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith splitv
 
-bindsym $mod+t layout toggle tabbed splith splitv
+bindsym $mod+t layout toggle tabbed splith 
 
 ## Modify // Window Layout Mode // <> t ##
 #set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode t

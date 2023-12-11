@@ -3,8 +3,8 @@ abbr rmi rm -i
 abbr rmf rm -rf
 
 # abbr ls exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user -l
-alias ls="exa"
-alias l="exa -l --all --group-directories-first --icons --time-style=long-iso"
+alias l="exa"
+alias ls="exa -l --all --group-directories-first --icons --time-style=long-iso"
 alias lt="exa -T --level=2 --group-directories-first"
 alias llt="exa -lT --level=2 --group-directories-first"
 alias lT="exa -T --level=4 --group-directories-first"
@@ -16,7 +16,7 @@ abbr asdf rtx
 
 
 # system update
-alias system-update="sudo nala update && sudo nala upgrade && pacstall -Up"
+alias system-update="sudo nala update && sudo nala upgrade && pacstall -Up && cargo install-update -a"
 
 # Nala
 alias apt="nala"

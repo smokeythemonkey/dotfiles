@@ -16,5 +16,6 @@ bindsym Print exec flameshot gui
 #exec --no-startup-id i3-msg 'workspace number $ws9; exec /usr/bin/discord'
 #exec --no-startup-id i3-msg 'workspace number $ws10; exec /usr/bin/thunderbird'
 
+assign [class="steam"] $ws8
 assign [class="discord"] $ws9
 assign [class="thunderbird"] $ws10

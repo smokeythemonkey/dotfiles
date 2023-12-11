@@ -31,7 +31,6 @@ install_apt_packages() {
         steam \
         discord \
         nemo \
-        alacritty \
         ripgrep \
         exa
 }
@@ -50,14 +49,13 @@ install_pacstall() {
 
 install_pacstall_packages() {
     echo "installing packages with pacstall"
-    pacstall -IP btop-bin \
-        veracrypt-deb \
-        nala-deb
+    pacstall -IP veracrypt-deb
+    # nala-deb
 }
 
-install_flatpak_packages() {
-    flatpak install flathub com.mattjakeman.ExtensionManager
-}
+# install_flatpak_packages() {
+#     flatpak install flathub com.mattjakeman.ExtensionManager
+# }
 
 install_enpass() {
     echo "installing enpass"
@@ -65,9 +63,9 @@ install_enpass() {
 }
 
 install_terminal_tools() {
-    echo "installing wezterm"
-    pacstall -IP wezterm-bin
-    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/open-wezterm-here 20
+    echo "installing alacritty"
+    pacstall -IP alacritty
+    sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 20
     sudo update-alternatives --config x-terminal-emulator
 
     echo "installing starship prompt"
@@ -102,7 +100,8 @@ install_cargo() {
         gitui \
         rtx-cli \
         du-dust \
-        skim
+        skim \
+        cargo-update
 }
 
 setup_rtx() {
@@ -126,11 +125,11 @@ install_rustup() {
     curl https://sh.rustup.rs -sSf | sh -s -- -y
 }
 
-setup_pop_shell() {
-    echo "setting pop shell keybindings"
-    sudo chmod +x $HOME/.config/yadm/pop_os_shortcuts.sh
-    $HOME/.config/yadm/pop_os_shortcuts.sh
-}
+# setup_pop_shell() {
+#     echo "setting pop shell keybindings"
+#     sudo chmod +x $HOME/.config/yadm/pop_os_shortcuts.sh
+#     $HOME/.config/yadm/pop_os_shortcuts.sh
+# }
 
 install_fonts() {
     echo "installing nerd-fonts"
@@ -138,11 +137,50 @@ install_fonts() {
     $HOME/.config/yadm/install_fonts.sh
 }
 
+install_regolith() {
+    echo "installing regolith"
+    wget -qO - https://regolith-desktop.org/regolith.key |
+        gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg >/dev/null
+    echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
+    https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" |
+        sudo tee /etc/apt/sources.list.d/regolith.list
+
+    sudo apt update
+    sudo apt install regolith-desktop
+    sudo apt install -y i3xrocks-bluetooth \
+        i3xrocks-cpu-usage \
+        i3xrocks-focused-window-name \
+        i3xrocks-media-player \
+        i3xrocks-memory \
+        i3xrocks-microphone \
+        i3xrocks-net-traffic \
+        i3xrocks-rofication \
+        i3xrocks-time \
+        i3xrocks-volume \
+        regolith-i3xrocks-config
+
+    sudo apt install -y regolith-compositor-picom-glx
+
+    sudo apt install -y regolith-look-blackhole \
+        regolith-look-ayu-dark
+
+    # sudo apt remove -y regolith-i3-base-launchers \
+    #     regolith-i3-default-style \
+    #     regolith-i3-navigation \
+    #     regolith-i3-networkmanager \
+    #     regolith-i3-next-workspace \
+    #     regolith-i3-resize \
+    #     regolith-i3-session \
+    #     regolith-i3-unclutter \
+    #     regolith-i3-user-programs \
+    #     regolith-i3-workspace-config
+}
+
 install_apps() {
-    install_pacstall
+    # install_pacstall
     install_pacstall_packages
     install_apt_packages
-    install_flatpak_packages
+    # install_flatpak_packages
     install_cargo
     install_enpass
 }
@@ -159,9 +197,10 @@ main() {
     setup_rtx
     install_python_tools
     install_terminal_tools
-    setup_pop_shell
+    # setup_pop_shell
     install_fonts
     configure_default_apps
+    install_regolith
     cleanup
 }
 
