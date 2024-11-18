@@ -1,0 +1,18 @@
+[core]
+	editor = "nvim"
+
+[feature]
+	manyFiles = true
+
+[filter "lfs"]
+	clean = "git-lfs clean -- %f"
+	process = "git-lfs filter-process"
+	required = true
+	smudge = "git-lfs smudge -- %f"
+
+[init]
+	defaultBranch = "main"
+
+[user]
+	email = "awollgarten@posteo.net"
+	name = "a.wollgarten"

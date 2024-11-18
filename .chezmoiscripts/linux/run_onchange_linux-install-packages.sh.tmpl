@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+export PATH="$HOME/.local/bin/:$HOME/bin/:$PATH"
+bindir="$HOME/.local/bin/"
+
+mkdir -p "$bindir"
+mkdir -p "$HOME/bin/"
+
+## Debian
+echo "Installing Packages"
+
+sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true fish ripgrep zoxide fzf bat fd-find vlc discord steam-installer thunderbird eza nemo
+
+sudo deb-get install code du-dust fastfetch spotify-client enpass veracrypt syncthing
+sudo pacstall -IPQ starship-bin alacritty

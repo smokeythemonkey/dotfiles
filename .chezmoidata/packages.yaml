@@ -1,0 +1,5 @@
+packages:
+  linux:
+    ubuntu:
+      nala:
+        - fish

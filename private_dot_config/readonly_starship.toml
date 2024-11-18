@@ -1,0 +1,60 @@
+add_newline = true
+format = "$battery$shell$git_branch$git_commit$git_state$git_status$nix_shell$nodejs$python$directory$cmd_duration$character"
+
+[battery]
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[character]
+error_symbol = "[➜](bold bright red)"
+success_symbol = "[➜](bold bright green)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bright-blue"
+
+[directory]
+truncate_to_repo = false
+truncation_length = 2
+
+[gcloud]
+disabled = true
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+only_attached = true
+style = "bright-yellow bold"
+symbol = "שׂ"
+
+[git_commit]
+format = "[ﰖ$hash]($style) "
+only_detached = true
+style = "bright-yellow bold"
+
+[git_state]
+style = "bright-purple bold"
+
+[git_status]
+style = "bright-green bold"
+
+[nix_shell]
+format = "[$symbol$name]($style) "
+style = "bright-purple bold"
+symbol = "❄️"
+
+[nodejs]
+format = "[$symbol($version) ]($style)"
+style = "bold green"
+symbol = "🤖"
+
+[python]
+format = "[$symbol$pyenv_prefix($version )(($virtualenv) )]($style)"
+style = "yellow bold"
+symbol = "🐍"
+
+[shell]
+bash_indicator = "🔨 "
+disabled = false
+fish_indicator = "🐟 "
+format = "$indicator"
+zsh_indicator = "🇿 "
