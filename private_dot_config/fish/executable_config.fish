@@ -37,7 +37,7 @@ status is-interactive; and begin
     alias lt 'eza --tree'
     alias rmf 'rm -rf'
     alias rmi 'rm - i'
-    alias system-update 'sudo apt update && sudo apt upgrade && nh home switch -u'
+    alias system-update 'sudo nala update && sudo nala upgrade && sudo nala autoremove'
     alias zz zellij
     alias cm chezmoi
 
@@ -47,13 +47,12 @@ status is-interactive; and begin
 
     if test "$TERM" != dumb
         eval (starship init fish)
-
     end
 
     atuin init fish | source
+    ~/.local/bin/mise activate fish | source
 
     #/nix/store/kj5k2wvwvqh2vnfndm82dpcr4canwyrn-direnv-2.34.0/bin/direnv hook fish | source
 
 
 end
-~/.local/bin/mise activate fish | source
