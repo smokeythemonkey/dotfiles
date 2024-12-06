@@ -6,10 +6,18 @@ bindir="$HOME/.local/bin/"
 mkdir -p "$bindir"
 mkdir -p "$HOME/bin/"
 
+{{ if or (eq .osid "linux-debian") (eq .osid "linux-ubuntu") (eq .osid "linux-debian ubuntu") (eq .osid "linux-ubuntu debian") }}
+
 ## Debian
 echo "Installing Packages"
 
-sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true fish ripgrep zoxide fzf bat fd-find vlc discord steam-installer thunderbird eza nemo
+sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.nala }} {{.}}{{ end }}
+sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.nala_url }}{{. | quote}} {{ end }}
+flatpak install flathub -y {{ range .packages.linux.ubuntu.flathub}} {{.}}{{ end }}
 
-sudo deb-get install code du-dust fastfetch spotify-client enpass veracrypt syncthing
-sudo pacstall -IPQ starship-bin alacritty
+sudo deb-get install {{ range .packages.linux.ubuntu.deb_get }} {{.}}{{ end }}
+sudo pacstall -IPQ {{ range .packages.linux.ubuntu.pacstall }} {{.}}{{ end }}
+
+
+
+{{ end }}

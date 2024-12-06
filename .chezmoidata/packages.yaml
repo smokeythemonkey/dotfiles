@@ -3,3 +3,30 @@ packages:
     ubuntu:
       nala:
         - fish
+        - ripgrep
+        - zoxide
+        - fzf
+        - bat
+        - fd-find
+        - eza
+        - fastfetch
+        - steam-installer
+        - nemo
+        - alacritty
+        - age
+        - syncthing
+      nala_url:
+        - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+      deb_get:
+        - du-dust
+        - enpass
+        - veracrypt
+      pacstall:
+        - starship-bin
+        - alacritty
+        - neovim
+      flathub:
+        - org.mozilla.Thunderbird
+        - com.spotify.Client
+        - io.github.milkshiift.GoofCord
+        - org.videolan.VLC

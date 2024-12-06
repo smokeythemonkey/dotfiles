@@ -1,0 +1,21 @@
+{{- $email := promptStringOnce . "email" "Email address (default awollgarten@posteo.net)" -}}
+{{- if not $email }}{{ $email = "awollgarten@posteo.net" }}{{ end -}}
+
+{{- $editor := promptStringOnce . "editor" "Editor (code/nvim, default code)" -}}
+{{- if not $editor }}{{ $editor = "code" }}{{ end -}}
+
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+{{- if hasKey .chezmoi.osRelease "idLike" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.idLike -}}
+{{- end -}}
+
+encryption = "age"
+
+[data]
+email = {{ $email | quote }}
+username = "awol"
+profile = "personal"
+osid = {{ $osid | quote }}

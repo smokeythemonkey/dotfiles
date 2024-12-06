@@ -16,6 +16,9 @@ if command -v apt &>/dev/null; then
     sudo apt install -t nala nala
   fi
 
+  echo "Setting up flathub"
+  flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
   sudo nala fetch --auto -y --https-only --non-free
   sudo nala install --update -y curl wget git ca-certificates libfuse2 gnupg2
 
@@ -28,6 +31,17 @@ if command -v apt &>/dev/null; then
   wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
   echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
   sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+
+  echo "Adding alacritty ppa"
+  sudo add-apt-repository ppa:aslatter/ppa -y
+
+  echo "Adding syncthing ppa"
+  sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+  echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+  echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing candidate" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+  echo "Adding neovim ppa"
+  sudo add-apt-repository ppa:neovim-ppa/stable
 
   echo "Installing atuin"
   curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
