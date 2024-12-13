@@ -4,7 +4,7 @@
 {{- $editor := promptStringOnce . "editor" "Editor (code/nvim, default code)" -}}
 {{- if not $editor }}{{ $editor = "code" }}{{ end -}}
 
-{{ - $profile := promptStringOnce . "profile" "Profile (personal/work)" -}}
+{{- $profile := promptStringOnce . "profile" "Profile (personal/work)" -}}
 
 
 {{- $osid := .chezmoi.os -}}
