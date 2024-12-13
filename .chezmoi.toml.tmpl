@@ -4,6 +4,9 @@
 {{- $editor := promptStringOnce . "editor" "Editor (code/nvim, default code)" -}}
 {{- if not $editor }}{{ $editor = "code" }}{{ end -}}
 
+{{ - $profile := promptStringOnce . "profile" "Profile (personal/work)" -}}
+
+
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
@@ -17,5 +20,5 @@ encryption = "age"
 [data]
 email = {{ $email | quote }}
 username = "awol"
-profile = "personal"
+profile = {{ $profile | quote }}
 osid = {{ $osid | quote }}

@@ -12,9 +12,9 @@ packages:
         - fastfetch
         - steam-installer
         - nemo
-        - alacritty
         - age
         - syncthing
+        - brave-browser
       nala_url:
         - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
       deb_get:
@@ -24,7 +24,6 @@ packages:
       pacstall:
         - starship-bin
         - alacritty
-        - neovim
       flathub:
         - org.mozilla.Thunderbird
         - com.spotify.Client

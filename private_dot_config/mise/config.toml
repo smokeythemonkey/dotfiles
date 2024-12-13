@@ -1,0 +1,4 @@
+[tools]
+usage = "latest"
+python = "3.12"
+neovim = "0.9"
