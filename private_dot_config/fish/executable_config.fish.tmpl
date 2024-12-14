@@ -17,7 +17,8 @@ if status is-interactive
     abbr --add -- tsakb 'sudo tailscale switch abknet.org.github'
     abbr --add -- tsstm 'sudo tailscale switch smokeythemonkey.github'
     {{- end}}
-    abbr --add -- cma 'chezmoi apply'
+    abbr --add -- cma 'chezmoi add'
+    abbr --add -- cmap 'chezmoi apply'
     abbr --add -- cme 'chezmoi edit'
     abbr --add -- cms 'chezmoi status'
     {{- if eq .chezmoi.config.data.profile "work" }}
