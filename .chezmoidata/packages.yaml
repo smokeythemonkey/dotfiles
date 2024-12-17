@@ -1,31 +1,42 @@
 packages:
   linux:
     ubuntu:
-      nala:
-        - fish
-        - ripgrep
-        - zoxide
-        - fzf
-        - bat
-        - fd-find
-        - eza
-        - fastfetch
-        - steam-installer
-        - nemo
-        - age
-        - syncthing
-        - brave-browser
-      nala_url:
-        - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-      deb_get:
-        - du-dust
-        - enpass
-        - veracrypt
-      pacstall:
-        - starship-bin
-        - alacritty
-      flathub:
-        - org.mozilla.Thunderbird
-        - com.spotify.Client
-        - io.github.milkshiift.GoofCord
-        - org.videolan.VLC
+      common:
+        nala:
+          - fish
+          - ripgrep
+          - zoxide
+          - fzf
+          - bat
+          - fd-find
+          - eza
+          - fastfetch
+          - nemo
+        nala_url:
+          - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+        deb_get:
+          - du-dust
+        pacstall:
+          - starship-bin
+          - alacritty
+        flathub:
+          - com.spotify.Client
+          - org.videolan.VLC
+          - com.brave.Browser
+      personal:
+        nala:
+          - age
+          - syncthing
+        deb_get:
+          - enpass
+          - veracrypt
+        flathub:
+          - org.mozilla.Thunderbird
+          - com.valvesoftware.Steam
+          - io.trezor.suite
+          - io.github.milkshiift.GoofCord
+      work:
+        flathub:
+          - bitwarden
+          - teams
+          -

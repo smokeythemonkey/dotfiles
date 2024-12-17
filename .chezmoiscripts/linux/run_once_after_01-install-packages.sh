@@ -10,6 +10,7 @@ echo $LINE
 
 echo "Installing mise"
 curl https://mise.run | sh
+mise install
 
 echo $LINE
 

@@ -9,15 +9,19 @@ mkdir -p "$HOME/bin/"
 {{ if or (eq .osid "linux-debian") (eq .osid "linux-ubuntu") (eq .osid "linux-debian ubuntu") (eq .osid "linux-ubuntu debian") }}
 
 ## Debian
-echo "Installing Packages"
+echo "Installing Common Packages"
 
-sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.nala }} {{.}}{{ end }}
-sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.nala_url }}{{. | quote}} {{ end }}
-flatpak install flathub -y {{ range .packages.linux.ubuntu.flathub}} {{.}}{{ end }}
+sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.common.nala }} {{.}}{{ end }}
+sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.common.nala_url }}{{. | quote}} {{ end }}
+flatpak install flathub -y {{ range .packages.linux.ubuntu.common.flathub}} {{.}}{{ end }}
 
-sudo deb-get install {{ range .packages.linux.ubuntu.deb_get }} {{.}}{{ end }}
-sudo pacstall -IPQ {{ range .packages.linux.ubuntu.pacstall }} {{.}}{{ end }}
+sudo deb-get install {{ range .packages.linux.ubuntu.common.deb_get }} {{.}}{{ end }}
+sudo pacstall -IPQ {{ range .packages.linux.ubuntu.common.pacstall }} {{.}}{{ end }}
 
-
-
+{{ if (eq .profile "personal") }}
+echo "Installing Personal Packages"
+sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.personal.nala }} {{.}}{{ end }}
+flatpak install flathub -y {{ range .packages.linux.ubuntu.personal.flathub}} {{.}}{{ end }}
+sudo deb-get install {{ range .packages.linux.ubuntu.personal.deb_get }} {{.}}{{ end }}
+{{ end }}
 {{ end }}
