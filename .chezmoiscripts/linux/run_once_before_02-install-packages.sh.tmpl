@@ -3,20 +3,32 @@
 set -e
 LINE="-------------------------------------------"
 
-echo "Installing atuin"
-curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+if command -v atuin &>/dev/null; then
+  echo "Atuin already installed!"
+else
+  echo "Installing atuin"
+  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+fi
 
 echo $LINE
 
-echo "Installing fisher"
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-# fisher install
+# if type fisher -P &>/dev/null; then
+#   echo "Fisher already installed"
+# else
+#   echo "Installing fisher"
+#   curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+#   fisher install
+# fi
 
-echo $LINE
+# echo $LINE
 
-echo "Installing mise"
-curl https://mise.run | sh
-# mise install
+if command -v mise &>/dev/null; then
+  echo "Mise already installed!"
+else
+  echo "Installing mise"
+  curl https://mise.run | sh
+  mise install
+fi
 
 echo $LINE
 
