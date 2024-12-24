@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
   "vim_mode": true,
   "ui_font_size": 22,
   "buffer_font_size": 18,
@@ -16,6 +23,7 @@
     "dark": "Dracula"
   },
   "restore_on_startup": "none",
+  "relative_line_numbers": true,
   "terminal": {
     "alternate_scroll": "on",
     "blinking": "terminal_controlled",
@@ -40,15 +48,30 @@
     },
     "working_directory": "current_project_directory"
   },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": true
+  },
+  "preferred_line_length": 120,
   "project_panel": {
+    "button": true,
     "git_status": true,
+    "file_icons": true,
+    "folder_icons": true,
     "indent_guides": { "show": "always" },
-    "file_icons": true
+    "indent_size": 25
+  },
+  "indent_guides": { "enabled": true, "coloring": "indent_aware" },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true
   },
   "git": {
-    "git_gutter": null,
+    "git_gutter": "tracked_files",
     "gutter_debounce": null,
-    "inline_blame": null
+    "inline_blame": {
+      "enabled": true
+    }
   },
   "languages": {
     "Python": {

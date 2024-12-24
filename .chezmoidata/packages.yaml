@@ -12,6 +12,8 @@ packages:
           - eza
           - fastfetch
           - nemo
+          - btop
+          - steam-installer
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         deb_get:
@@ -32,11 +34,15 @@ packages:
           - veracrypt
         flathub:
           - org.mozilla.Thunderbird
-          - com.valvesoftware.Steam
           - io.trezor.suite
           - io.github.milkshiift.GoofCord
       work:
+        uv:
+          - awscli
+          - cookiecutter
+          - pre-commit
+          - ruff
         flathub:
-          - bitwarden
-          - teams
-          -
+          - com.bitwarden.desktop
+          - com.github.IsmaelMartinez.teams_for_linux
+          - org.onlyoffice.desktopeditors
