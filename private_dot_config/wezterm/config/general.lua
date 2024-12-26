@@ -1,15 +1,46 @@
-local Icons = require "utils.class.icon"
-local fs = require("utils.fn").fs
+return {
+   -- behaviours
+   automatically_reload_config = true,
+   exit_behavior = 'CloseOnCleanExit', -- if the shell program exited with a successful status
+   exit_behavior_messaging = 'Verbose',
+   status_update_interval = 1000,
 
-local Config = {}
+   scrollback_lines = 20000,
 
-Config.default_cwd = fs.home()
-
--- ref: https://wezfurlong.org/wezterm/config/lua/SshDomain.html
-Config.ssh_domains = {}
-
--- ref: https://wezfurlong.org/wezterm/multiplexing.html#unix-domains
-Config.unix_domains = {}
-Config.default_prog = { '/usr/bin/fish', "-l" }
-
-return Config
+   hyperlink_rules = {
+      -- Matches: a URL in parens: (URL)
+      {
+         regex = '\\((\\w+://\\S+)\\)',
+         format = '$1',
+         highlight = 1,
+      },
+      -- Matches: a URL in brackets: [URL]
+      {
+         regex = '\\[(\\w+://\\S+)\\]',
+         format = '$1',
+         highlight = 1,
+      },
+      -- Matches: a URL in curly braces: {URL}
+      {
+         regex = '\\{(\\w+://\\S+)\\}',
+         format = '$1',
+         highlight = 1,
+      },
+      -- Matches: a URL in angle brackets: <URL>
+      {
+         regex = '<(\\w+://\\S+)>',
+         format = '$1',
+         highlight = 1,
+      },
+      -- Then handle URLs not wrapped in brackets
+      {
+         regex = '\\b\\w+://\\S+[)/a-zA-Z0-9-]+',
+         format = '$0',
+      },
+      -- implicit mailto link
+      {
+         regex = '\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b',
+         format = 'mailto:$0',
+      },
+   },
+}
