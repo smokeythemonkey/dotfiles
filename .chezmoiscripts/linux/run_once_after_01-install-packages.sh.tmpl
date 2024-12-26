@@ -27,14 +27,18 @@ if command -v mise &>/dev/null; then
 else
   echo "Installing mise"
   curl https://mise.run | sh
-  mise install
+  # mise install
 fi
 
 echo $LINE
 
-{{ if (eq .profile "work") }}
-echo "Installing Work UV Packages"
-uv tool install {{ range .packages.linux.ubuntu.work.uv }} {{.}}{{ end }}
-{{ end }}
+curl -f https://zed.dev/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh
+
+
+#{{ if (eq .profile "work") }}
+#echo "Installing Work UV Packages"
+#uv tool install {{ range .packages.linux.ubuntu.work.uv }} {{.}}{{ end }}
+#{{ end }}
 
 echo $LINE

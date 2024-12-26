@@ -14,8 +14,9 @@ if command -v apt &>/dev/null; then
     echo "Setting up Nala"
     curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
     sudo apt install -t nala nala
+    sudo nala fetch --auto -y --https-only --non-free
   fi
-  sudo nala fetch --auto -y --https-only --non-free
+  
   sudo nala install --update -y curl wget git ca-certificates libfuse2 gnupg2
 
 fi
@@ -42,15 +43,20 @@ sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.lis
 echo "Adding alacritty ppa"
 sudo add-apt-repository ppa:aslatter/ppa -y
 
+{{ if (eq .profile "personal") }}
 echo "Adding syncthing ppa"
 sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
 echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing candidate" | sudo tee /etc/apt/sources.list.d/syncthing.list
-
-echo "Adding neovim ppa"
-sudo add-apt-repository ppa:neovim-ppa/stable -y
+{{ end }}
 
 echo "Adding fish ppa"
 sudo apt-add-repository ppa:fish-shell/release-3 -y
+
+echo "Adding Wezterm repo"
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+
+sudo nala update
 
 echo $LINE

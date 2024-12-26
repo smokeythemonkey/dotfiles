@@ -16,19 +16,19 @@ sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .p
 flatpak install flathub -y {{ range .packages.linux.ubuntu.common.flathub}} {{.}}{{ end }}
 
 sudo deb-get install {{ range .packages.linux.ubuntu.common.deb_get }} {{.}}{{ end }}
-sudo pacstall -IPQ {{ range .packages.linux.ubuntu.common.pacstall }} {{.}}{{ end }}
 
 {{ if (eq .profile "personal") }}
 echo "Installing Personal Packages"
+
 sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.personal.nala }} {{.}}{{ end }}
 flatpak install flathub -y {{ range .packages.linux.ubuntu.personal.flathub}} {{.}}{{ end }}
 sudo deb-get install {{ range .packages.linux.ubuntu.personal.deb_get }} {{.}}{{ end }}
+
 {{ end }}
 
 {{ if (eq .profile "work") }}
 echo "Installing Work Packages"
 
-sudo nala install --update -y -o APT::Get::AllowUnauthenticated=true {{ range .packages.linux.ubuntu.work.nala }} {{.}}{{ end }}
 flatpak install flathub -y {{ range .packages.linux.ubuntu.work.flathub}} {{.}}{{ end }}
 
 {{ end }}

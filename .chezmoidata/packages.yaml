@@ -10,17 +10,13 @@ packages:
           - bat
           - fd-find
           - eza
-          - fastfetch
           - nemo
           - btop
-          - steam-installer
+          - wezterm
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         deb_get:
           - du-dust
-        pacstall:
-          - starship-bin
-          - alacritty
         flathub:
           - com.spotify.Client
           - org.videolan.VLC
@@ -29,6 +25,7 @@ packages:
         nala:
           - age
           - syncthing
+          - steam-installer
         deb_get:
           - enpass
           - veracrypt
@@ -45,4 +42,4 @@ packages:
         flathub:
           - com.bitwarden.desktop
           - com.github.IsmaelMartinez.teams_for_linux
-          - org.onlyoffice.desktopeditors
+
