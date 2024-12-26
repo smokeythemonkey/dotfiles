@@ -27,7 +27,8 @@ if command -v mise &>/dev/null; then
 else
   echo "Installing mise"
   curl https://mise.run | sh
-  # mise install
+  echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+  mise install
 fi
 
 echo $LINE
