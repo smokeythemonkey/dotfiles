@@ -10,10 +10,10 @@ if status is-interactive
 
     # Abbreviations
     {{- if eq .chezmoi.config.data.profile "personal" }}
-    abbr --add -- sshnode1 'ssh node@node1.leopard-porgy.ts.net'
-    abbr --add -- sshnode2 'ssh node@node2.leopard-porgy.ts.net'
+    abbr --add -- sshnode 'ssh node@node2.leopard-porgy.ts.net'
     abbr --add -- sshsyncer 'ssh awol@syncer.leopard-porgy.ts.net'
     abbr --add -- sshvh 'ssh vhserver@vhserver.sheep-mulley.ts.net'
+    abbr --add -- sshsalt 'ssh salty@saltyp.tail89e6d3.ts.net'
     abbr --add -- tsakb 'sudo tailscale switch abknet.org.github'
     abbr --add -- tsstm 'sudo tailscale switch smokeythemonkey.github'
     {{- end}}
@@ -34,7 +34,7 @@ if status is-interactive
     alias lt 'eza --tree'
     alias rmf 'rm -rf'
     alias rmi 'rm - i'
-    alias system-update 'sudo nala update && sudo nala upgrade && sudo nala autoremove'
+    alias system-update 'sudo nala update && sudo nala upgrade && sudo nala autoremove && flatpak update'
     alias zz zellij
     alias cm chezmoi
 
