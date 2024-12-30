@@ -33,9 +33,18 @@ fi
 
 echo $LINE
 
-curl -f https://zed.dev/install.sh | sh
-curl -sS https://starship.rs/install.sh | sh
+if command -v zed &>/dev/null; then
+  echo "Zed already installed"
+else
+  curl -f https://zed.dev/install.sh | sh
+fi
 
+
+if command -v starship &>/dev/null; then
+  echo "starship already installed"
+else
+  curl -sS https://starship.rs/install.sh | sh
+fi
 
 #{{ if (eq .profile "work") }}
 #echo "Installing Work UV Packages"
