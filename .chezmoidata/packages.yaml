@@ -13,6 +13,7 @@ packages:
           - nemo
           - btop
           - wezterm
+          - age
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         deb_get:
@@ -21,13 +22,12 @@ packages:
           - com.spotify.Client
           - org.videolan.VLC
           - com.brave.Browser
+          - com.bitwarden.desktop
       personal:
         nala:
-          - age
           - syncthing
           - steam-installer
         deb_get:
-          - enpass
           - veracrypt
         flathub:
           - org.mozilla.Thunderbird
@@ -39,7 +39,6 @@ packages:
           - cookiecutter
           - pre-commit
           - ruff
+          - pipenv
         flathub:
-          - com.bitwarden.desktop
           - com.github.IsmaelMartinez.teams_for_linux
-
