@@ -37,6 +37,9 @@ if status is-interactive
     alias system-update 'sudo nala update && sudo nala upgrade && sudo nala autoremove && flatpak update'
     alias zz zellij
     alias cm chezmoi
+    {{- if eq .chezmoi.config.data.profile "work" }}
+    alias aws awsv2
+    {{- end}}
 
 
     # Interactive shell initialisation

@@ -1,3 +1,4 @@
+
 {{- $email := promptStringOnce . "email" "Email address (default awollgarten@posteo.net)" -}}
 {{- if not $email }}{{ $email = "awollgarten@posteo.net" }}{{ end -}}
 
@@ -16,6 +17,9 @@
 {{- end -}}
 
 encryption = "age"
+[age]
+identity = "/home/awol/key.txt"
+recipient = "age12s0u5nd3m6uj3l0vvdar7c4qwueclsrpurg30uw3dqmm3uz47y6qewxfc2"
 
 [data]
 email = {{ $email | quote }}
