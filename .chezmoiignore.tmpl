@@ -5,3 +5,7 @@
 ~/.config/fish/functions/setup-internal-pypi.fish
 ~/.config/fish/functions/setup-internal-npm.fish
 {{- end }}
+
+{{- if ne .chezmoi.config.data.profile  "personal" }}
+~/.local/state/syncthing/config.xml
+{{- end }}

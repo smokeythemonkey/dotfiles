@@ -17,3 +17,9 @@
 	email = {{ .email | quote }}
 	name = "a.wollgarten"
 
+[credential]
+    helper =
+    helper = /usr/local/bin/git-credential-manager
+    credentialStore = cache
+[credential "https://dev.azure.com"]
+    useHttpPath = true
