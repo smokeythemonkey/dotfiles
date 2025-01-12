@@ -14,6 +14,8 @@ packages:
           - btop
           - wezterm
           - age
+          - libpcsclite-dev
+          - clang
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         deb_get:
@@ -23,6 +25,7 @@ packages:
           - org.videolan.VLC
           - com.brave.Browser
           - com.bitwarden.desktop
+          - com.yubico.yubioath
       personal:
         nala:
           - syncthing
@@ -35,7 +38,6 @@ packages:
           - io.github.milkshiift.GoofCord
       work:
         uv:
-          - awscli
           - cookiecutter
           - pre-commit
           - ruff

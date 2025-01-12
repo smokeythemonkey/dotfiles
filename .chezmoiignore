@@ -1,0 +1,12 @@
+{{- if ne .chezmoi.config.data.profile "work" }}
+.config/fish/functions/get-codeartifact-token.fish
+.config/fish/functions/login-aws.fish
+.config/fish/functions/login-bs.fish
+.config/fish/functions/setup-internal-pypi.fish
+.config/fish/functions/setup-internal-npm.fish
+.aws/config
+{{- end }}
+
+{{- if ne .chezmoi.config.data.profile "personal" }}
+.local/state/syncthing/config.xml
+{{- end }}
