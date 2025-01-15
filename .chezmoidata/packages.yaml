@@ -4,22 +4,12 @@ packages:
       common:
         nala:
           - fish
-          - ripgrep
-          - zoxide
-          - fzf
-          - bat
-          - fd-find
-          - eza
           - nemo
-          - btop
           - wezterm
-          - age
           - libpcsclite-dev
           - clang
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-        deb_get:
-          - du-dust
         flathub:
           - com.spotify.Client
           - org.videolan.VLC
@@ -38,9 +28,6 @@ packages:
           - io.github.milkshiift.GoofCord
       work:
         uv:
-          - cookiecutter
-          - pre-commit
-          - ruff
           - pipenv
         flathub:
           - com.github.IsmaelMartinez.teams_for_linux
