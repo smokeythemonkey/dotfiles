@@ -26,6 +26,7 @@ packages:
           - org.mozilla.Thunderbird
           - io.trezor.suite
           - io.github.milkshiift.GoofCord
+          - de.bund.ausweisapp.ausweisapp2
       work:
         uv:
           - pipenv
