@@ -16,6 +16,8 @@ packages:
           - com.brave.Browser
           - com.bitwarden.desktop
           - com.yubico.yubioath
+          - com.github.tchx84.Flatseal
+          - com.github.PintaProject.Pinta
       personal:
         nala:
           - syncthing
@@ -27,6 +29,7 @@ packages:
           - io.trezor.suite
           - io.github.milkshiift.GoofCord
           - de.bund.ausweisapp.ausweisapp2
+          - org.godotengine.Godot
       work:
         uv:
           - pipenv
