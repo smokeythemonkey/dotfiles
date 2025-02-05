@@ -1,0 +1,26 @@
+[tools]
+usage              = "latest"
+python             = "3.12"
+neovim             = "10.3"
+uv                 = "latest"
+node               = "22"
+age                = "latest"
+pre-commit         = "latest"
+fzf                = "latest"
+ruff               = "latest"
+eza                = "latest"
+zellij             = "latest"
+dust               = "latest"
+zoxide             = "latest"
+btop               = "latest"
+bitwarden          = "latest"
+bat                = "latest"
+ripgrep            = "latest"
+{{- if eq .chezmoi.config.data.profile "personal" }}
+age-plugin-yubikey = "latest"
+{{- end}}
+{{- if eq .chezmoi.config.data.profile "work" }}
+terraform          = "latest"
+cookiecutter       = "latest"
+awscli             = "latest"
+{{- end}}
