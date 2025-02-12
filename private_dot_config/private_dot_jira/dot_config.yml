@@ -1,0 +1,722 @@
+auth_type: basic
+board:
+    id: 1
+    name: DEVELOPMENT
+    type: scrum
+epic:
+    name: customfield_10011
+    link: customfield_10014
+installation: Cloud
+issue:
+    fields:
+        custom:
+            - name: Atlas goals
+              key: customfield_10191
+              schema:
+                datatype: string
+            - name: Atlas project
+              key: customfield_10192
+              schema:
+                datatype: string
+            - name: Atlas project status
+              key: customfield_10193
+              schema:
+                datatype: number
+            - name: Label
+              key: customfield_10195
+              schema:
+                datatype: array
+                items: string
+            - name: Idea archived by
+              key: customfield_10075
+              schema:
+                datatype: array
+                items: user
+            - name: Target Audience
+              key: customfield_10196
+              schema:
+                datatype: array
+                items: option
+            - name: TEST
+              key: customfield_10197
+              schema:
+                datatype: string
+            - name: Idea archived on
+              key: customfield_10077
+              schema:
+                datatype: datetime
+            - name: Idea archived
+              key: customfield_10078
+              schema:
+                datatype: option
+            - name: Browserversion and Timestamp
+              key: customfield_10180
+              schema:
+                datatype: string
+            - name: Locked forms
+              key: customfield_10060
+              schema:
+                datatype: number
+            - name: Vulnerability
+              key: customfield_10181
+              schema:
+                datatype: any
+            - name: Total forms
+              key: customfield_10061
+              schema:
+                datatype: number
+            - name: Controlling
+              key: customfield_10182
+              schema:
+                datatype: option
+            - name: Kategorie
+              key: customfield_10063
+              schema:
+                datatype: option
+            - name: Department
+              key: customfield_10185
+              schema:
+                datatype: string
+            - name: Publication date
+              key: customfield_10188
+              schema:
+                datatype: date
+            - name: Bucket
+              key: customfield_10069
+              schema:
+                datatype: option
+            - name: Schwierigkeit
+              key: customfield_10615
+              schema:
+                datatype: option
+            - name: Scrrenshot(s) or Screenvideo
+              key: customfield_10170
+              schema:
+                datatype: array
+                items: option
+            - name: Request participants
+              key: customfield_10050
+              schema:
+                datatype: array
+                items: user
+            - name: Screenshot(s) or Screenvideo
+              key: customfield_10171
+              schema:
+                datatype: option
+            - name: Impact of an Analysis Ticket
+              key: customfield_10172
+              schema:
+                datatype: array
+                items: option
+            - name: Area
+              key: customfield_10052
+              schema:
+                datatype: option
+            - name: Satisfaction
+              key: customfield_10053
+              schema:
+                datatype: sd-feedback
+            - name: I can confirm, that this bug...
+              key: customfield_10174
+              schema:
+                datatype: array
+                items: option
+            - name: Satisfaction date
+              key: customfield_10054
+              schema:
+                datatype: datetime
+            - name: I can confirm, that this analysis...
+              key: customfield_10175
+              schema:
+                datatype: array
+                items: option
+            - name: Request language
+              key: customfield_10055
+              schema:
+                datatype: sd-request-lang
+            - name: Environment
+              key: customfield_10176
+              schema:
+                datatype: array
+                items: option
+            - name: Affected services
+              key: customfield_10056
+              schema:
+                datatype: array
+                items: service-entity-field
+            - name: Certain user(s) affected
+              key: customfield_10177
+              schema:
+                datatype: string
+            - name: User used
+              key: customfield_10178
+              schema:
+                datatype: string
+            - name: Open forms
+              key: customfield_10058
+              schema:
+                datatype: number
+            - name: I am aware, that ...
+              key: customfield_10179
+              schema:
+                datatype: array
+                items: option
+            - name: Submitted forms
+              key: customfield_10059
+              schema:
+                datatype: number
+            - name: Checklist Text
+              key: customfield_10049
+              schema:
+                datatype: string
+            - name: How many users are affected
+              key: customfield_10160
+              schema:
+                datatype: option
+            - name: Tried a second run?
+              key: customfield_10161
+              schema:
+                datatype: array
+                items: option
+            - name: Pre-qualified via Retool debugger
+              key: customfield_10162
+              schema:
+                datatype: array
+                items: option
+            - name: Report-Link
+              key: customfield_10163
+              schema:
+                datatype: string
+            - name: Target date
+              key: customfield_10285
+              schema:
+                datatype: string
+            - name: Browser(version), Time stamp, Company, User
+              key: customfield_10164
+              schema:
+                datatype: string
+            - name: test
+              key: customfield_10165
+              schema:
+                datatype: string
+            - name: Start date
+              key: customfield_10286
+              schema:
+                datatype: string
+            - name: Tried a second run after 5-10 min.?
+              key: customfield_10166
+              schema:
+                datatype: option
+            - name: Pre-qualified via Retool debugger (only for KPI-result related errors)
+              key: customfield_10167
+              schema:
+                datatype: option
+            - name: Checklist Completed
+              key: customfield_10047
+              schema:
+                datatype: string
+            - name: Additional details
+              key: customfield_10168
+              schema:
+                datatype: array
+                items: option
+            - name: Checklist Content YAML
+              key: customfield_10048
+              schema:
+                datatype: string
+            - name: Basic details
+              key: customfield_10169
+              schema:
+                datatype: option
+            - name: Priority Score for Advanced Roadmaps
+              key: customfield_10038
+              schema:
+                datatype: number
+            - name: Environment
+              key: customfield_10159
+              schema:
+                datatype: array
+                items: option
+            - name: Einstellender Manager
+              key: customfield_10039
+              schema:
+                datatype: string
+            - name: Sales Handover new
+              key: customfield_10150
+              schema:
+                datatype: option
+            - name: Inhaltstyp
+              key: customfield_10151
+              schema:
+                datatype: string
+            - name: Veröffentlichungsdatum
+              key: customfield_10152
+              schema:
+                datatype: date
+            - name: Insights
+              key: customfield_10153
+              schema:
+                datatype: number
+            - name: Linked issues
+              key: customfield_10154
+              schema:
+                datatype: number
+            - name: Comments
+              key: customfield_10155
+              schema:
+                datatype: number
+            - name: Confirm DoR
+              key: customfield_10035
+              schema:
+                datatype: option
+            - name: Insights impact
+              key: customfield_10156
+              schema:
+                datatype: number
+            - name: Design
+              key: customfield_10157
+              schema:
+                datatype: array
+                items: design.field.name
+            - name: Label
+              key: customfield_10148
+              schema:
+                datatype: array
+                items: string
+            - name: PM 2
+              key: customfield_10149
+              schema:
+                datatype: option
+            - name: Job Size Alt
+              key: customfield_10140
+              schema:
+                datatype: option
+            - name: Sprint
+              key: customfield_10020
+              schema:
+                datatype: array
+                items: json
+            - name: Business Value
+              key: customfield_10141
+              schema:
+                datatype: option
+            - name: Flagged
+              key: customfield_10021
+              schema:
+                datatype: array
+                items: option
+            - name: User Value
+              key: customfield_10142
+              schema:
+                datatype: option
+            - name: Your name
+              key: customfield_10384
+              schema:
+                datatype: array
+                items: user
+            - name: Target start
+              key: customfield_10022
+              schema:
+                datatype: date
+            - name: CoD
+              key: customfield_10143
+              schema:
+                datatype: number
+            - name: Target end
+              key: customfield_10023
+              schema:
+                datatype: date
+            - name: '[CHART] Date of First Response'
+              key: customfield_10024
+              schema:
+                datatype: datetime
+            - name: '[CHART] Time in Status'
+              key: customfield_10025
+              schema:
+                datatype: any
+            - name: Story Points
+              key: customfield_10026
+              schema:
+                datatype: number
+            - name: Story point estimate
+              key: customfield_10016
+              schema:
+                datatype: number
+            - name: Issue color
+              key: customfield_10017
+              schema:
+                datatype: string
+            - name: Parent Link
+              key: customfield_10018
+              schema:
+                datatype: any
+            - name: Rank
+              key: customfield_10019
+              schema:
+                datatype: any
+            - name: Request Type
+              key: customfield_10010
+              schema:
+                datatype: sd-customerrequesttype
+            - name: Corp. Objective
+              key: customfield_10252
+              schema:
+                datatype: option
+            - name: CMI Categories
+              key: customfield_10132
+              schema:
+                datatype: option
+            - name: Epic Status
+              key: customfield_10012
+              schema:
+                datatype: option
+            - name: What will we do differently with this Analysis?
+              key: customfield_10133
+              schema:
+                datatype: string
+            - name: Epic Color
+              key: customfield_10013
+              schema:
+                datatype: string
+            - name: Due Date
+              key: customfield_10134
+              schema:
+                datatype: date
+            - name: Start date
+              key: customfield_10015
+              schema:
+                datatype: date
+            - name: Change type
+              key: customfield_10005
+              schema:
+                datatype: option
+            - name: Change risk
+              key: customfield_10006
+              schema:
+                datatype: option
+            - name: Required Skills
+              key: customfield_10127
+              schema:
+                datatype: array
+                items: option
+            - name: Change reason
+              key: customfield_10007
+              schema:
+                datatype: option
+            - name: Change start date
+              key: customfield_10008
+              schema:
+                datatype: datetime
+            - name: Change completion date
+              key: customfield_10009
+              schema:
+                datatype: datetime
+            - name: Project overview key
+              key: customfield_10120
+              schema:
+                datatype: string
+            - name: Quartal
+              key: customfield_10483
+              schema:
+                datatype: option
+            - name: Development
+              key: customfield_10000
+              schema:
+                datatype: any
+            - name: Project overview status
+              key: customfield_10121
+              schema:
+                datatype: string
+            - name: Team
+              key: customfield_10001
+              schema:
+                datatype: team
+            - name: Watching this issue
+              key: customfield_10122
+              schema:
+                datatype: array
+                items: user
+            - name: Organizations
+              key: customfield_10002
+              schema:
+                datatype: array
+                items: sd-customerorganization
+            - name: Briefing
+              key: customfield_10123
+              schema:
+                datatype: number
+            - name: Delivery progress
+              key: customfield_10124
+              schema:
+                datatype: number
+            - name: Delivery status
+              key: customfield_10125
+              schema:
+                datatype: number
+            - name: Product Group(s)
+              key: customfield_10117
+              schema:
+                datatype: array
+                items: option
+            - name: Checklist Progress
+              key: customfield_10351
+              schema:
+                datatype: string
+            - name: Checklist Progress %
+              key: customfield_10352
+              schema:
+                datatype: number
+            - name: DoR
+              key: customfield_10111
+              schema:
+                datatype: number
+            - name: Checklist Template
+              key: customfield_10353
+              schema:
+                datatype: option2
+            - name: Checklist Text (view-only)
+              key: customfield_10354
+              schema:
+                datatype: string
+            - name: PRIO
+              key: customfield_10109
+              schema:
+                datatype: number
+            - name: Zeitlicher Aufwand
+              key: customfield_10582
+              schema:
+                datatype: option
+            - name: Goals
+              key: customfield_10214
+              schema:
+                datatype: array
+                items: Goals
+            - name: mentioned
+              key: customfield_10215
+              schema:
+                datatype: array
+                items: user
+            - name: AI Leadership
+              key: customfield_10216
+              schema:
+                datatype: array
+                items: string
+            - name: Label
+              key: customfield_10217
+              schema:
+                datatype: array
+                items: string
+            - name: Label
+              key: customfield_10218
+              schema:
+                datatype: array
+                items: string
+            - name: Language
+              key: customfield_10210
+              schema:
+                datatype: array
+                items: option
+            - name: Distribution Plan
+              key: customfield_10211
+              schema:
+                datatype: array
+                items: option
+            - name: Important Information
+              key: customfield_10212
+              schema:
+                datatype: string
+            - name: Sentiment
+              key: customfield_10213
+              schema:
+                datatype: array
+                items: sd-sentiment
+            - name: Collateral Approver (e.g., the person who will give the final feedback on the content of the collateral)
+              key: customfield_10203
+              schema:
+                datatype: string
+            - name: Type of Collateral (Select the option below)
+              key: customfield_10204
+              schema:
+                datatype: array
+                items: option
+            - name: Department (which teams will use this?)
+              key: customfield_10205
+              schema:
+                datatype: array
+                items: option
+            - name: Target
+              key: customfield_10206
+              schema:
+                datatype: array
+                items: option
+            - name: Requester Name
+              key: customfield_10207
+              schema:
+                datatype: array
+                items: user
+            - name: Collateral Approver (Who needs to approve the final version?)
+              key: customfield_10208
+              schema:
+                datatype: array
+                items: user
+            - name: 'Preferred Deadline '
+              key: customfield_10209
+              schema:
+                datatype: date
+            - name: Department
+              key: customfield_10681
+              schema:
+                datatype: string
+            - name: Department
+              key: customfield_10682
+              schema:
+                datatype: string
+            - name: Requester Name (Add your company @)
+              key: customfield_10201
+              schema:
+                datatype: string
+            - name: vote
+              key: customfield_10318
+              schema:
+                datatype: number
+            - name: Template
+              key: customfield_10319
+              schema:
+                datatype: option
+            - name: Category (Type of Problem)
+              key: customfield_10549
+              schema:
+                datatype: option
+            - name: Testuser of the affected Organization
+              key: customfield_10417
+              schema:
+                datatype: string
+            - name: Concept
+              key: customfield_10095
+              schema:
+                datatype: number
+            - name: 9. Additional Information/Clarification
+              key: customfield_10530
+              schema:
+                datatype: string
+            - name: Job Size
+              key: customfield_10651
+              schema:
+                datatype: number
+            - name: PM
+              key: customfield_10652
+              schema:
+                datatype: array
+                items: option
+            - name: Functional Requirements
+              key: customfield_10522
+              schema:
+                datatype: string
+            - name: Integration Requirements (if applicable)
+              key: customfield_10523
+              schema:
+                datatype: string
+            - name: 6. Are there any dependencies or external systems involved?
+              key: customfield_10524
+              schema:
+                datatype: option
+            - name: Systems involved
+              key: customfield_10525
+              schema:
+                datatype: string
+            - name: Integration points (if any)
+              key: customfield_10526
+              schema:
+                datatype: string
+            - name: 7. Level of Urgency & Timeline
+              key: customfield_10527
+              schema:
+                datatype: option
+            - name: Desired deadline (if appplicable)
+              key: customfield_10528
+              schema:
+                datatype: date
+            - name: 8. Business Context Clarification
+              key: customfield_10529
+              schema:
+                datatype: option
+            - name: Team(s)
+              key: customfield_10080
+              schema:
+                datatype: array
+                items: option
+            - name: Objective
+              key: customfield_10081
+              schema:
+                datatype: string
+            - name: UX/UI
+              key: customfield_10084
+              schema:
+                datatype: number
+            - name: Specific Details of the Request
+              key: customfield_10520
+              schema:
+                datatype: string
+            - name: Properties or Data Needed
+              key: customfield_10521
+              schema:
+                datatype: string
+            - name: Request Type
+              key: customfield_10516
+              schema:
+                datatype: option
+            - name: Why is this request important?
+              key: customfield_10517
+              schema:
+                datatype: string
+            - name: Core Objective or Goal
+              key: customfield_10518
+              schema:
+                datatype: string
+            - name: Expected Outcome
+              key: customfield_10519
+              schema:
+                datatype: string
+    types:
+        - id: "10000"
+          name: Epic
+          handle: Epic
+          subtask: false
+        - id: "10005"
+          name: Enabler
+          handle: Enabler
+          subtask: false
+        - id: "10001"
+          name: User Story
+          handle: User Story
+          subtask: false
+        - id: "10010"
+          name: Correction
+          handle: Correction
+          subtask: false
+        - id: "10002"
+          name: Task
+          handle: Task
+          subtask: false
+        - id: "10004"
+          name: Bug
+          handle: Bug
+          subtask: false
+        - id: "10008"
+          name: Rollout
+          handle: Rollout
+          subtask: false
+        - id: "10009"
+          name: Hotfix
+          handle: Hotfix
+          subtask: false
+        - id: "10003"
+          name: Sub-task
+          handle: Sub-task
+          subtask: true
+login: a.wollgarten@brainsuite.ai
+project:
+    key: BRAIN
+    type: classic
+server: https://aimpower.atlassian.net
+timezone: Europe/Berlin
