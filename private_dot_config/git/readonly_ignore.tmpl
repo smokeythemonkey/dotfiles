@@ -1,7 +1,9 @@
 .direnv
 result
+.pymon
+{{- if eq .chezmoi.config.data.profile "work" }}
 .mise.toml
 .mise.local.toml
 .python-version
 mise.toml
-.pymon
+{{- end}}
