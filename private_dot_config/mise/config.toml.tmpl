@@ -21,12 +21,21 @@ lazydocker         = "latest"
 yazi               = "latest"
 {{- if eq .chezmoi.config.data.profile "personal" }}
 age-plugin-yubikey = "latest"
+"pipx:ansible"     = "latest"
+"pipx:yubikey-manager" ="latest"
+"pipx:rendercv[full]" = "latest"
 {{- end}}
 {{- if eq .chezmoi.config.data.profile "work" }}
 terraform          = "latest"
-cookiecutter       = "latest"
 awscli             = "latest"
+"pipx:cookiecutter"       = "latest"
+"pipx:pipenv" = "latest"
+"npm:aws-cdk"            = "latest"
+"npm:meta"               = "latest"
 {{- end}}
 
 [settings]
 experimental = true
+
+pipx.uvx = true
+#npm.bun = true
