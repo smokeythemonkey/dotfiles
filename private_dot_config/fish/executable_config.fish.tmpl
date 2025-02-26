@@ -24,7 +24,7 @@ if status is-interactive
     abbr --add -- cms 'chezmoi status'
     {{- if eq .chezmoi.config.data.profile "work" }}
     abbr --add -- sstdd 'npx sst deploy --profile default --stage awoldev'
-    abbr --add -- cdkdd 'uv run cdk deploy --profile default -all'
+    abbr --add -- cdkdd 'uv run cdk deploy --profile default --all'
     {{- end}}
 
     # Aliases
