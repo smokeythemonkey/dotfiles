@@ -46,7 +46,7 @@ echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://ap
 {{ end }}
 
 echo "Adding fish ppa"
-sudo apt-add-repository ppa:fish-shell/release-3 -y
+sudo add-apt-repository ppa:fish-shell/release-4 -y
 
 echo "Adding Wezterm repo"
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg

@@ -16,7 +16,7 @@
   },
   "ui_font_family": "FiraCode Nerd Font Mono",
   "buffer_font_family": "FiraCode Nerd Font Mono",
-  "vim_mode": true,
+  "vim_mode": false,
   "base_keymap": "VSCode",
   "ui_font_size": 22,
   "buffer_font_size": 18,
@@ -26,7 +26,7 @@
     "dark": "Dracula"
   },
   "restore_on_startup": "none",
-  "relative_line_numbers": true,
+  "relative_line_numbers": false,
   "terminal": {
     "alternate_scroll": "on",
     "blinking": "terminal_controlled",
@@ -78,7 +78,7 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["ruff"],
+      "language_servers": ["pyright", "ruff"],
       "format_on_save": "on",
       "formatter": [
         {
@@ -96,17 +96,6 @@
     }
   },
   "lsp": {
-    "ruff": {
-      "initialization_options": {
-        "settings": {
-          // Ruff server settings goes here
-          "lineLength": 120,
-          "lint": {
-            "extendSelect": ["I"]
-          }
-        }
-      }
-    },
     "pyright": {
       "settings": {
         "python.analysis": {
@@ -115,6 +104,17 @@
         },
         "python": {
           "pythonPath": ".venv/bin/python"
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // Ruff server settings goes here
+          "lineLength": 120,
+          "lint": {
+            "extendSelect": ["I"]
+          }
         }
       }
     }
