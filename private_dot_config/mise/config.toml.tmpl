@@ -20,6 +20,7 @@ gitui              = "latest"
 lazydocker         = "latest"
 yazi               = "latest"
 chezmoi            = "latest"
+terraform          = "latest"
 # vscli              = "latest"
 {{- if eq .chezmoi.config.data.profile "personal" }}
 age-plugin-yubikey = "latest"
@@ -28,7 +29,6 @@ age-plugin-yubikey = "latest"
 "pipx:rendercv[full]" = "latest"
 {{- end}}
 {{- if eq .chezmoi.config.data.profile "work" }}
-terraform          = "latest"
 awscli             = "latest"
 "pipx:cookiecutter"       = "latest"
 "pipx:pipenv" = "latest"
