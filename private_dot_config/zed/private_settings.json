@@ -93,6 +93,16 @@
           }
         }
       ]
+    },
+    "TOML": {
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "taplo"
+          }
+        }
+      ]
     }
   },
   "lsp": {
@@ -116,6 +126,14 @@
             "extendSelect": ["I"]
           }
         }
+      }
+    },
+    "taplo": {
+      "settings": {
+        "array_auto_collapse": false,
+        "align_entries": true,
+        "align_comments": true,
+        "reorder_arrays": true
       }
     }
   }
