@@ -4,7 +4,6 @@ packages:
       common:
         nala:
           - fish
-          - nemo
           - wezterm
           - libpcsclite-dev
           - clang
@@ -31,7 +30,5 @@ packages:
           - de.bund.ausweisapp.ausweisapp2
           - org.godotengine.Godot
       work:
-        uv:
-          - pipenv
         flathub:
-         - com.github.IsmaelMartinez.teams_for_linux
+          - com.github.IsmaelMartinez.teams_for_linux
