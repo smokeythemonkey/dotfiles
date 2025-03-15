@@ -12,13 +12,20 @@ fi
 
 echo $LINE
 
-# if type fisher -P &>/dev/null; then
-#   echo "Fisher already installed"
-# else
-#   echo "Installing fisher"
-#   curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-#   fisher install
-# fi
+if command -v zed &>/dev/null; then
+  echo "Zed already installed"
+else
+  curl -f https://zed.dev/install.sh | sh
+fi
+
+echo $LINE
+
+if command -v starship &>/dev/null; then
+  echo "starship already installed"
+else
+  curl -sS https://starship.rs/install.sh | sh
+fi
+
 
 # echo $LINE
 
@@ -31,24 +38,5 @@ else
   mise install
 fi
 
-echo $LINE
-
-if command -v zed &>/dev/null; then
-  echo "Zed already installed"
-else
-  curl -f https://zed.dev/install.sh | sh
-fi
-
-
-if command -v starship &>/dev/null; then
-  echo "starship already installed"
-else
-  curl -sS https://starship.rs/install.sh | sh
-fi
-
-#{{ if (eq .profile "work") }}
-#echo "Installing Work UV Packages"
-#uv tool install {{ range .packages.linux.ubuntu.work.uv }} {{.}}{{ end }}
-#{{ end }}
 
 echo $LINE
