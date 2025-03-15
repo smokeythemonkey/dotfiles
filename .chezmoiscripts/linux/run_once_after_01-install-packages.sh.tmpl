@@ -26,17 +26,4 @@ else
   curl -sS https://starship.rs/install.sh | sh
 fi
 
-
-# echo $LINE
-
-if command -v mise &>/dev/null; then
-  echo "Mise already installed!"
-else
-  echo "Installing mise"
-  curl https://mise.run | sh
-  echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
-  mise install
-fi
-
-
 echo $LINE
