@@ -122,5 +122,4 @@ fi
 eval "$(atuin init bash)"
 eval "$(starship init bash)"
 eval "$(~/.local/bin/mise activate bash)"
-eval "$(~/.local/bin/mise activate bash)"
 eval "$(/home/awol/.local/bin/mise activate bash)"
