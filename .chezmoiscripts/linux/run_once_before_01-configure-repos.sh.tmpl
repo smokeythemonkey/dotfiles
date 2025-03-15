@@ -56,3 +56,12 @@ echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez
 sudo nala update
 
 echo $LINE
+
+if command -v mise &>/dev/null; then
+  echo "Mise already installed!"
+else
+  echo "Installing mise"
+  curl https://mise.run | sh
+  echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+  mise install
+fi
