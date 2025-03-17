@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -93,16 +96,6 @@
           }
         }
       ]
-    },
-    "TOML": {
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "language_server": {
-            "name": "taplo"
-          }
-        }
-      ]
     }
   },
   "lsp": {
@@ -126,14 +119,6 @@
             "extendSelect": ["I"]
           }
         }
-      }
-    },
-    "taplo": {
-      "settings": {
-        "array_auto_collapse": false,
-        "align_entries": true,
-        "align_comments": true,
-        "reorder_arrays": true
       }
     }
   }

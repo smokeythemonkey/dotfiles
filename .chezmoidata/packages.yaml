@@ -29,6 +29,7 @@ packages:
           - io.github.milkshiift.GoofCord
           - de.bund.ausweisapp.ausweisapp2
           - org.godotengine.Godot
+          - dev.zed.Zed
       work:
         flathub:
           - com.github.IsmaelMartinez.teams_for_linux

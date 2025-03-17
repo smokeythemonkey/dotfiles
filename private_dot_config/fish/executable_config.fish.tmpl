@@ -37,28 +37,26 @@ if status is-interactive
     alias lt 'eza --tree'
     alias rmf 'rm -rf'
     alias rmi 'rm - i'
-    alias system-update 'sudo nala update && sudo nala upgrade && sudo nala autoremove && flatpak update && mise up && sudo nala autoremove'
+    alias system-update 'sudo nala update && sudo nala upgrade && sudo nala autoremove && flatpak update && mise up && sudo nala autoremove && flatpak uninstall --unused'
     alias zz zellij
     alias cm chezmoi
     {{- if eq .chezmoi.config.data.profile "work" }}
 
     {{- end}}
 
-
-    # Interactive shell initialisation
-    # ~/.local/share/mise/installs/ubi-ajeetdsouza-zoxide/0.9.7/zoxide init fish | source
-
-    if test "$TERM" != dumb
-        eval (starship init fish)
-    end
-
-    atuin init fish | source
     ~/.local/bin/mise activate fish | source
 
   else
     ~/.local/bin/mise activate fish --shims | source
 end
 
+ # Interactive shell initialisation
+ #~/.local/share/mise/installs/ubi-ajeetdsouza-zoxide/0.9.7/zoxide init fish | source
+
+
+eval (starship init fish)
+eval (zoxide init fish | source)
+eval (mcfly init fish | source)
 
 uv generate-shell-completion fish | source
 uvx --generate-shell-completion fish | source

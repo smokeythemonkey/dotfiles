@@ -21,7 +21,8 @@ lazydocker = "latest"
 chezmoi = "latest"
 "aqua:hashicorp/terraform" = "latest"
 "ubi:sharkdp/fd" = "latest"
-# vscli              = "latest"
+"ubi:starship/starship" = "latest"
+"ubi:cantino/mcfly" = "latest"
 {{- if eq .chezmoi.config.data.profile "personal" }}
 age-plugin-yubikey = "latest"
 "pipx:ansible" = "latest"
@@ -44,4 +45,4 @@ jira-cli = "latest"
 experimental = true
 
 pipx.uvx = true
-npm.bun = true
+npm.bun = false
