@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -21,7 +22,7 @@
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "vim_mode": false,
   "base_keymap": "VSCode",
-  "ui_font_size": 22,
+  "ui_font_size": 20,
   "buffer_font_size": 18,
   "theme": {
     "mode": "system",
@@ -42,7 +43,7 @@
       }
     },
     "env": {},
-    "font_family": "FiraMono Nerd Font",
+    "font_family": "FiraCode Nerd Font Mono",
     "font_features": null,
     "font_size": null,
     "line_height": "comfortable",
@@ -96,6 +97,16 @@
           }
         }
       ]
+    },
+    "TOML": {
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "taplo"
+          }
+        }
+      ]
     }
   },
   "lsp": {
@@ -119,6 +130,14 @@
             "extendSelect": ["I"]
           }
         }
+      }
+    },
+    "taplo": {
+      "settings": {
+        "array_auto_collapse": false,
+        "align_entries": true,
+        "align_comments": true,
+        "reorder_arrays": true
       }
     }
   }
