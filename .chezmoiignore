@@ -11,3 +11,5 @@
 {{- if eq .chezmoi.config.data.profile "work" }}
 .local/state/syncthing/**
 {{- end }}
+
+.config/alacritty/**
