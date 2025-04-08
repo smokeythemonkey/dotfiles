@@ -1,0 +1,8 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): Spawn("/usr/bin/wezterm"),
+}

@@ -12,12 +12,10 @@ packages:
         flathub:
           - com.spotify.Client
           - org.videolan.VLC
-          - com.brave.Browser
           - com.bitwarden.desktop
           - com.yubico.yubioath
           - com.github.tchx84.Flatseal
           - com.github.PintaProject.Pinta
-          - dev.zed.Zed
       personal:
         nala:
           - syncthing
