@@ -2,7 +2,14 @@
     (
         modifiers: [
             Super,
+            Ctrl,
         ],
-        key: "t",
-    ): Spawn("/usr/bin/wezterm"),
+        key: "c",
+    ): Spawn("/usr/bin/cosmic-settings"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "c",
+    ): Spawn("/usr/bin/code"),
 }

@@ -16,6 +16,7 @@ packages:
           - com.yubico.yubioath
           - com.github.tchx84.Flatseal
           - com.github.PintaProject.Pinta
+          - dev.zed.Zed
       personal:
         nala:
           - syncthing
