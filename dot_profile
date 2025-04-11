@@ -1,2 +1,3 @@
 
 export SHELL=/bin/fish
+. "$HOME/.cargo/env"

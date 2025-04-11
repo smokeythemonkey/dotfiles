@@ -17,6 +17,7 @@ packages:
           - com.github.tchx84.Flatseal
           - com.github.PintaProject.Pinta
           - dev.zed.Zed
+          - org.mozilla.Thunderbird
       personal:
         nala:
           - syncthing
@@ -24,7 +25,6 @@ packages:
         deb_get:
           - veracrypt
         flathub:
-          - org.mozilla.Thunderbird
           - io.trezor.suite
           - io.github.milkshiift.GoofCord
           - de.bund.ausweisapp.ausweisapp2
