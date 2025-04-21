@@ -1,4 +1,3 @@
-// Zed keymap
 //
 // For information on binding keys, see the Zed
 // documentation: https://zed.dev/docs/key-bindings
@@ -9,13 +8,15 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-k h": "workspace::ActivatePaneLeft",
+      "ctrl-k j": "workspace::ActivatePaneDown",
+      "ctrl-k k": "workspace::ActivatePaneUp",
+      "ctrl-k l": "workspace::ActivatePaneRight",
+
+      "ctrl-k shift-h": ["workspace::MoveItemToPaneInDirection", { "direction": "left" }],
+      "ctrl-k shift-j": ["workspace::MoveItemToPaneInDirection", { "direction": "down" }],
+      "ctrl-k shift-k": ["workspace::MoveItemToPaneInDirection", { "direction": "up" }],
+      "ctrl-k shift-l": ["workspace::MoveItemToPaneInDirection", { "direction": "right" }]
     }
   }
 ]

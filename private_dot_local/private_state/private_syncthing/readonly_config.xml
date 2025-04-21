@@ -1,6 +1,9 @@
 <configuration version="37">
     <folder id="gsevy-qaaup" label="Pictures" path="/home/awol/Pictures" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" fsWatcherTimeoutS="0" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="FE6VUEF-EGJW2VJ-4CKP5YV-NRMEAJF-OGNKWWQ-IEETDVI-XWVQX6A-NBDGCAH" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="INKFDYP-DGH2WOY-6Z2UOA4-XT74DC5-DO2XSDT-5FIGGZS-E555Q5J-UXHD5AJ" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -25,7 +28,7 @@
         <maxConflicts>10</maxConflicts>
         <disableSparseFiles>false</disableSparseFiles>
         <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
+        <paused>true</paused>
         <weakHashThresholdPct>25</weakHashThresholdPct>
         <markerName>.stfolder</markerName>
         <copyOwnershipFromParent>false</copyOwnershipFromParent>
@@ -47,6 +50,9 @@
     </folder>
     <folder id="gyxxf-ztock" label="Documents" path="/home/awol/Documents" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" fsWatcherTimeoutS="0" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="FE6VUEF-EGJW2VJ-4CKP5YV-NRMEAJF-OGNKWWQ-IEETDVI-XWVQX6A-NBDGCAH" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="INKFDYP-DGH2WOY-6Z2UOA4-XT74DC5-DO2XSDT-5FIGGZS-E555Q5J-UXHD5AJ" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -91,6 +97,17 @@
             <maxTotalSize>0</maxTotalSize>
         </xattrFilter>
     </folder>
+    <device id="FE6VUEF-EGJW2VJ-4CKP5YV-NRMEAJF-OGNKWWQ-IEETDVI-XWVQX6A-NBDGCAH" name="mini-stm" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
+    </device>
     <device id="INKFDYP-DGH2WOY-6Z2UOA4-XT74DC5-DO2XSDT-5FIGGZS-E555Q5J-UXHD5AJ" name="big-stm" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
@@ -116,6 +133,7 @@
     </device>
     <gui enabled="true" tls="false" debugging="false" sendBasicAuthPrompt="false">
         <address>127.0.0.1:8384</address>
+        <metricsWithoutAuth>false</metricsWithoutAuth>
         <apikey>uVMuVetvcUyD4LRgswiG4wmnJmKN7efq</apikey>
         <theme>default</theme>
     </gui>
@@ -178,6 +196,9 @@
     <defaults>
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" fsWatcherTimeoutS="0" ignorePerms="false" autoNormalize="true">
             <filesystemType>basic</filesystemType>
+            <device id="FE6VUEF-EGJW2VJ-4CKP5YV-NRMEAJF-OGNKWWQ-IEETDVI-XWVQX6A-NBDGCAH" introducedBy="">
+                <encryptionPassword></encryptionPassword>
+            </device>
             <device id="INKFDYP-DGH2WOY-6Z2UOA4-XT74DC5-DO2XSDT-5FIGGZS-E555Q5J-UXHD5AJ" introducedBy="">
                 <encryptionPassword></encryptionPassword>
             </device>
