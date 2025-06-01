@@ -23,13 +23,12 @@ packages:
         nala:
           - syncthing
           - steam-installer
-        deb_get:
-          - veracrypt
         flathub:
           - io.trezor.suite
           - io.github.milkshiift.GoofCord
           - de.bund.ausweisapp.ausweisapp2
           - org.godotengine.Godot
+          - im.riot.Riot
       work:
         flathub:
           - com.github.IsmaelMartinez.teams_for_linux
