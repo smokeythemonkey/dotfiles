@@ -6,8 +6,7 @@ function login-bs --description="Calls get-codeartifact-token and setup-internal
         return 1
     end
 
-    setup-internal-pypi
     setup-internal-npm
 
-    echo Aimpower internal-packages have been setup
+    echo Brainsuite internal-packages have been setup
 end
