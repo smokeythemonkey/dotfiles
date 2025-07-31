@@ -11,7 +11,7 @@ packages:
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         flathub:
-          - com.spotify.Client
+          - flathub dev.aunetx.deezer
           - org.videolan.VLC
           - com.bitwarden.desktop
           - com.yubico.yubioath
