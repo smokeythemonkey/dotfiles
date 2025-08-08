@@ -13,10 +13,10 @@
       "ctrl-k k": "workspace::ActivatePaneUp",
       "ctrl-k l": "workspace::ActivatePaneRight",
 
-      "ctrl-k shift-h": ["workspace::MoveItemToPaneInDirection", { "direction": "left" }],
-      "ctrl-k shift-j": ["workspace::MoveItemToPaneInDirection", { "direction": "down" }],
-      "ctrl-k shift-k": ["workspace::MoveItemToPaneInDirection", { "direction": "up" }],
-      "ctrl-k shift-l": ["workspace::MoveItemToPaneInDirection", { "direction": "right" }]
+      "ctrl-alt-shift-h": ["workspace::MoveItemToPaneInDirection", { "direction": "left" }],
+      "ctrl-alt-shift-j": ["workspace::MoveItemToPaneInDirection", { "direction": "down" }],
+      "ctrl-alt-shiftk": ["workspace::MoveItemToPaneInDirection", { "direction": "up" }],
+      "ctrl-alt-shift-l": ["workspace::MoveItemToPaneInDirection", { "direction": "right" }]
     }
   }
 ]
