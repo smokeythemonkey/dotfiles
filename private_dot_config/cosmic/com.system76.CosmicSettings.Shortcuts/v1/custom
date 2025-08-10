@@ -12,4 +12,10 @@
         ],
         key: "c",
     ): Spawn("/usr/bin/code"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "z",
+    ): Spawn("/home/awol/.local/bin/zed"),
 }
