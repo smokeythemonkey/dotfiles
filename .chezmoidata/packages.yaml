@@ -23,6 +23,7 @@ packages:
         nala:
           - syncthing
           - steam-installer
+          - libpam-fprintd
         flathub:
           - io.trezor.suite
           - io.github.milkshiift.GoofCord
