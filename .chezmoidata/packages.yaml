@@ -4,10 +4,13 @@ packages:
       common:
         nala:
           - fish
-          # - wezterm
+          - wezterm
           - libpcsclite-dev
           - clang
           - foot
+          - poppler-utils
+          - ffmpeg
+          - imagemagick
         nala_url:
           - https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
         flathub:
