@@ -1,4 +1,3 @@
-
 {{- $email := promptStringOnce . "email" "Email address (default awollgarten@posteo.net)" -}}
 {{- if not $email }}{{ $email = "awollgarten@posteo.net" }}{{ end -}}
 
@@ -16,6 +15,9 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.idLike -}}
 {{- end -}}
 
+encryption = "age"
+[age]
+passphrase = true
 
 [data]
 email = {{ $email | quote }}
